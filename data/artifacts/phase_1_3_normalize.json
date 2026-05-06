@@ -1,0 +1,142 @@
+{
+  "phase": "1.3",
+  "input_fetch_artifact": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\artifacts\\phase_1_2_fetch.json",
+  "total_files": 14,
+  "successful_normalizations": 14,
+  "failed_normalizations": 0,
+  "total_characters_extracted": 92160,
+  "raw_dir": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw",
+  "text_dir": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text",
+  "content_type_stats": {
+    "html": 13,
+    "pdf": 1
+  },
+  "results": [
+    {
+      "url_id": "URL-001",
+      "source_file": "data\\raw\\URL-001",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-001.txt",
+      "text_length": 1280,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-002",
+      "source_file": "data\\raw\\URL-002.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-002.txt",
+      "text_length": 2120,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-003",
+      "source_file": "data\\raw\\URL-003.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-003.txt",
+      "text_length": 250,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-004",
+      "source_file": "data\\raw\\URL-004.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-004.txt",
+      "text_length": 2653,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-005",
+      "source_file": "data\\raw\\URL-005.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-005.txt",
+      "text_length": 958,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-006",
+      "source_file": "data\\raw\\URL-006.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-006.txt",
+      "text_length": 4591,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-007",
+      "source_file": "data\\raw\\URL-007.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-007.txt",
+      "text_length": 2721,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-010",
+      "source_file": "data\\raw\\URL-010.pdf",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-010.txt",
+      "text_length": 69951,
+      "error_message": null,
+      "content_type": "pdf"
+    },
+    {
+      "url_id": "URL-08",
+      "source_file": "data\\raw\\URL-08.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-08.txt",
+      "text_length": 977,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-09",
+      "source_file": "data\\raw\\URL-09.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-09.txt",
+      "text_length": 3643,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-11",
+      "source_file": "data\\raw\\URL-11.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-11.txt",
+      "text_length": 1942,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-12",
+      "source_file": "data\\raw\\URL-12",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-12.txt",
+      "text_length": 417,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-13",
+      "source_file": "data\\raw\\URL-13.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-13.txt",
+      "text_length": 440,
+      "error_message": null,
+      "content_type": "html"
+    },
+    {
+      "url_id": "URL-14",
+      "source_file": "data\\raw\\URL-14.html",
+      "success": true,
+      "text_file": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-14.txt",
+      "text_length": 217,
+      "error_message": null,
+      "content_type": "html"
+    }
+  ]
+}

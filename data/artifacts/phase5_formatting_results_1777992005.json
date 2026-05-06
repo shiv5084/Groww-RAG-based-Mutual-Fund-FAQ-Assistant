@@ -1,0 +1,372 @@
+[
+  {
+    "line_number": 1,
+    "original_data": {
+      "answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.",
+      "citation_url": "https://www.hdfcfund.com"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "Citation URL not found in text"
+      ],
+      "validation_details": {
+        "json_validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.",
+              "sentence_check": [
+                true,
+                1
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": true,
+              "errors": [],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.\n\nLast updated from sources: 2026-05-05\n\nSource: https://www.hdfcfund.com"
+            }
+          }
+        },
+        "render_result": {
+          "success": true,
+          "rendered_answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.\n\nSource: https://www.hdfcfund.com\n\nGenerated: 2026-05-05 20:10:05",
+          "original_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.",
+          "cleaned_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.",
+          "truncated": false,
+          "citation": "Source: https://www.hdfcfund.com",
+          "timestamp": "2026-05-05 20:10:05",
+          "components": {
+            "answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.",
+            "citation": "Source: https://www.hdfcfund.com",
+            "timestamp": "2026-05-05 20:10:05"
+          }
+        },
+        "rendered_validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "empty_answer": false,
+            "answer_length": 158,
+            "citation_present": true,
+            "guards": {
+              "original_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.",
+              "sentence_check": [
+                true,
+                1
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": true,
+              "errors": [],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.\n\nLast updated from sources: 2026-05-05\n\nSource: https://www.hdfcfund.com"
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies.\n\nSource: https://www.hdfcfund.com\n\nGenerated: 2026-05-05 20:10:05",
+    "processed_at": "2026-05-05 20:10:05"
+  },
+  {
+    "line_number": 2,
+    "original_data": {
+      "answer": "The AUM is ₹100,479.23 Cr. This fund has very high risk. It follows growth-oriented style.",
+      "citation_url": "https://www.hdfcfund.com/explore/mutual-funds"
+    },
+    "validation": {
+      "valid": false,
+      "errors": [
+        "Too many sentences: 4 (max: 3)"
+      ],
+      "warnings": [
+        "Citation URL not found in text"
+      ],
+      "validation_details": {
+        "json_validation": {
+          "valid": false,
+          "errors": [
+            "Too many sentences: 4 (max: 3)"
+          ],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "The AUM is ₹100,479.23 Cr. This fund has very high risk. It follows growth-oriented style.",
+              "sentence_check": [
+                false,
+                4
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": false,
+              "errors": [
+                "Too many sentences: 4 (max: 3)"
+              ],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "The AUM is ₹100,479.23 Cr. This fund has very high risk. It follows growth-oriented style."
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "VALIDATION FAILED: Too many sentences: 4 (max: 3)",
+    "processed_at": "2026-05-05 20:10:05"
+  },
+  {
+    "line_number": 3,
+    "original_data": {
+      "answer": "I recommend investing in this fund as it's the best option for returns.",
+      "citation_url": "https://www.example.com"
+    },
+    "validation": {
+      "valid": false,
+      "errors": [
+        "Forbidden content detected: ['recommend', 'best']"
+      ],
+      "warnings": [
+        "Citation URL not found in text"
+      ],
+      "validation_details": {
+        "json_validation": {
+          "valid": false,
+          "errors": [
+            "Forbidden content detected: ['recommend', 'best']"
+          ],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "I recommend investing in this fund as it's the best option for returns.",
+              "sentence_check": [
+                true,
+                1
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                false,
+                [
+                  "recommend",
+                  "best"
+                ]
+              ],
+              "is_valid": false,
+              "errors": [
+                "Forbidden content detected: ['recommend', 'best']"
+              ],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "I recommend investing in this fund as it's the best option for returns."
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "VALIDATION FAILED: Forbidden content detected: ['recommend', 'best']",
+    "processed_at": "2026-05-05 20:10:05"
+  },
+  {
+    "line_number": 4,
+    "original_data": {
+      "answer": "This is a very long answer that exceeds the normal sentence limits. It has multiple sentences. It should be truncated properly. This is the fourth sentence. This is the fifth sentence.",
+      "citation_url": "https://www.hdfcfund.com"
+    },
+    "validation": {
+      "valid": false,
+      "errors": [
+        "Too many sentences: 5 (max: 3)",
+        "Forbidden content detected: ['should']"
+      ],
+      "warnings": [
+        "Citation URL not found in text"
+      ],
+      "validation_details": {
+        "json_validation": {
+          "valid": false,
+          "errors": [
+            "Too many sentences: 5 (max: 3)",
+            "Forbidden content detected: ['should']"
+          ],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "This is a very long answer that exceeds the normal sentence limits. It has multiple sentences. It should be truncated properly. This is the fourth sentence. This is the fifth sentence.",
+              "sentence_check": [
+                false,
+                5
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                false,
+                [
+                  "should"
+                ]
+              ],
+              "is_valid": false,
+              "errors": [
+                "Too many sentences: 5 (max: 3)",
+                "Forbidden content detected: ['should']"
+              ],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "This is a very long answer that exceeds the normal sentence limits. It has multiple sentences. It should be truncated properly. This is the fourth sentence. This is the fifth sentence."
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "VALIDATION FAILED: Too many sentences: 5 (max: 3); Forbidden content detected: ['should']",
+    "processed_at": "2026-05-05 20:10:05"
+  },
+  {
+    "line_number": 5,
+    "original_data": {
+      "answer": "Check https://www.badsite.com for more information about this scheme.",
+      "citation_url": "https://www.example.com"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "Citation URL not found in text"
+      ],
+      "validation_details": {
+        "json_validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "Check https://www.badsite.com for more information about this scheme.",
+              "sentence_check": [
+                true,
+                3
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": true,
+              "errors": [],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "Check https://www.badsite.com for more information about this scheme.\n\nLast updated from sources: 2026-05-05\n\nSource: https://www.example.com"
+            }
+          }
+        },
+        "render_result": {
+          "success": true,
+          "rendered_answer": "Check https://www.badsite.com for more information about this scheme.\n\nSource: https://www.example.com\n\nGenerated: 2026-05-05 20:10:05",
+          "original_text": "Check https://www.badsite.com for more information about this scheme.",
+          "cleaned_text": "Check https://www.badsite.com for more information about this scheme.",
+          "truncated": false,
+          "citation": "Source: https://www.example.com",
+          "timestamp": "2026-05-05 20:10:05",
+          "components": {
+            "answer": "Check https://www.badsite.com for more information about this scheme.",
+            "citation": "Source: https://www.example.com",
+            "timestamp": "2026-05-05 20:10:05"
+          }
+        },
+        "rendered_validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "empty_answer": false,
+            "answer_length": 134,
+            "citation_present": true,
+            "guards": {
+              "original_text": "Check https://www.badsite.com for more information about this scheme.",
+              "sentence_check": [
+                true,
+                3
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": true,
+              "errors": [],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "Check https://www.badsite.com for more information about this scheme.\n\nLast updated from sources: 2026-05-05\n\nSource: https://www.example.com"
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "Check https://www.badsite.com for more information about this scheme.\n\nSource: https://www.example.com\n\nGenerated: 2026-05-05 20:10:05",
+    "processed_at": "2026-05-05 20:10:05"
+  }
+]

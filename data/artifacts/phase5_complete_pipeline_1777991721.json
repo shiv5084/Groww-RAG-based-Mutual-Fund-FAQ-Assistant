@@ -1,0 +1,165 @@
+[
+  {
+    "query": "What is HDFC Equity Fund?",
+    "route": "factual",
+    "generation": {
+      "answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.",
+      "citation_url": "https://www.hdfcfund.com",
+      "refusal": false,
+      "route": "factual",
+      "context_used": true,
+      "chunk_ids_used": [
+        "hdfc_equity_001"
+      ],
+      "generation_time": 0.699373
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "Citation URL not found in text"
+      ],
+      "validation_details": {
+        "json_validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.",
+              "sentence_check": [
+                true,
+                3
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": true,
+              "errors": [],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.\n\nLast updated from sources: 2026-05-05\n\nSource: https://www.hdfcfund.com"
+            }
+          }
+        },
+        "render_result": {
+          "success": true,
+          "rendered_answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.\n\nSource: https://www.hdfcfund.com\n\nGenerated: 2026-05-05 20:05:21",
+          "original_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.",
+          "cleaned_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.",
+          "truncated": false,
+          "citation": "Source: https://www.hdfcfund.com",
+          "timestamp": "2026-05-05 20:05:21",
+          "components": {
+            "answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.",
+            "citation": "Source: https://www.hdfcfund.com",
+            "timestamp": "2026-05-05 20:05:21"
+          }
+        },
+        "rendered_validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": [
+            "Citation URL not found in text"
+          ],
+          "validation_details": {
+            "empty_answer": false,
+            "answer_length": 412,
+            "citation_present": true,
+            "guards": {
+              "original_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.",
+              "sentence_check": [
+                true,
+                3
+              ],
+              "url_check": [
+                true,
+                []
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": true,
+              "errors": [],
+              "warnings": [
+                "Citation URL not found in text"
+              ],
+              "formatted_text": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.\n\nLast updated from sources: 2026-05-05\n\nSource: https://www.hdfcfund.com"
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate long-term capital appreciation.\n\nSource: https://www.hdfcfund.com\n\nGenerated: 2026-05-05 20:05:21",
+    "processed_at": "2026-05-05 20:05:21"
+  },
+  {
+    "query": "Should I invest in HDFC Mid Cap Fund?",
+    "route": "advisory",
+    "generation": {
+      "answer": "I can only provide factual information about mutual fund schemes and processes. For educational information, please visit: https://www.amfiindia.com/investor-education\n\nI'm happy to help with specific questions about scheme details or factual information.",
+      "citation_url": "https://www.amfiindia.com/investor-education",
+      "refusal": true,
+      "route": "advisory",
+      "context_used": false,
+      "chunk_ids_used": [],
+      "generation_time": 1e-05
+    },
+    "validation": {
+      "valid": false,
+      "errors": [
+        "Too many sentences: 4 (max: 3)"
+      ],
+      "warnings": [],
+      "validation_details": {
+        "json_validation": {
+          "valid": false,
+          "errors": [
+            "Too many sentences: 4 (max: 3)"
+          ],
+          "warnings": [],
+          "validation_details": {
+            "json_parse": true,
+            "answer_extracted": true,
+            "guards": {
+              "original_text": "I can only provide factual information about mutual fund schemes and processes. For educational information, please visit: https://www.amfiindia.com/investor-education\n\nI'm happy to help with specific questions about scheme details or factual information.",
+              "sentence_check": [
+                false,
+                4
+              ],
+              "url_check": [
+                true,
+                [
+                  "https://www.amfiindia.com/investor-education"
+                ]
+              ],
+              "forbidden_check": [
+                true,
+                []
+              ],
+              "is_valid": false,
+              "errors": [
+                "Too many sentences: 4 (max: 3)"
+              ],
+              "warnings": [],
+              "formatted_text": "I can only provide factual information about mutual fund schemes and processes. For educational information, please visit: https://www.amfiindia.com/investor-education\n\nI'm happy to help with specific questions about scheme details or factual information."
+            }
+          }
+        }
+      }
+    },
+    "rendered_answer": "VALIDATION FAILED: Too many sentences: 4 (max: 3)",
+    "processed_at": "2026-05-05 20:05:21"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "phase": "1.4",
+  "generated_at": "2026-05-05T16:41:47.658434Z",
+  "input_artifacts": {
+    "phase_1_1": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\artifacts\\phase_1_1_registry.json",
+    "phase_1_2": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\artifacts\\phase_1_2_fetch.json",
+    "phase_1_3": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\artifacts\\phase_1_3_normalize.json"
+  },
+  "output_manifest": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\manifest.json",
+  "corpus_summary": {
+    "total_documents": 14,
+    "successful_fetches": 14,
+    "successful_normalizations": 14,
+    "failed_documents": 0,
+    "fetch_success_rate": 100.0,
+    "normalization_success_rate": 100.0
+  },
+  "corpus_stats": {
+    "total_documents": 14,
+    "successful_fetches": 14,
+    "successful_normalizations": 14,
+    "failed_documents": 0,
+    "fetch_success_rate": 100.0,
+    "normalization_success_rate": 100.0,
+    "document_types": {
+      "amc_home": 1,
+      "factsheet_index": 1,
+      "investor_service_page": 1,
+      "statutory_disclosure_hub": 1,
+      "scheme_page": 5,
+      "kim_pdf": 1,
+      "investor_education_amc": 1,
+      "regulator_home": 1,
+      "investor_education": 1,
+      "mutual_fund_guidance": 1
+    },
+    "source_owners": {
+      "AMC": 11,
+      "SEBI": 3
+    },
+    "processing_statuses": {
+      "completed": 14
+    },
+    "text_statistics": {
+      "total_characters": 92160,
+      "average_characters": 6582,
+      "min_characters": 217,
+      "max_characters": 69951
+    }
+  }
+}

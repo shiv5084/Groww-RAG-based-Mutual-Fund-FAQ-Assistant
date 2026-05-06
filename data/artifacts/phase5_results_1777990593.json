@@ -1,0 +1,38 @@
+[
+  {
+    "answer": "I don't have information about this specific query in the provided sources.",
+    "citation_url": null,
+    "refusal": false,
+    "route": "factual",
+    "context_used": false,
+    "chunk_ids_used": [],
+    "generation_time": 3e-06
+  },
+  {
+    "answer": "I don't have information about this specific query in the provided sources.",
+    "citation_url": null,
+    "refusal": false,
+    "route": "factual",
+    "context_used": false,
+    "chunk_ids_used": [],
+    "generation_time": 1e-06
+  },
+  {
+    "answer": "I cannot provide investment advice, recommendations, or comparisons between schemes. I can only provide factual information about mutual fund schemes and processes.\n\nFor educational information about mutual funds and investing, please visit:\nhttps://www.amfiindia.com/investor-education\n\nIf you have specific questions about scheme details, processes, or factual information, I'll be happy to help with those.",
+    "citation_url": "https://www.amfiindia.com/investor-education",
+    "refusal": true,
+    "route": "advisory",
+    "context_used": false,
+    "chunk_ids_used": [],
+    "generation_time": 6e-06
+  },
+  {
+    "answer": "For detailed performance information, please refer to the official scheme factsheet.",
+    "citation_url": null,
+    "refusal": false,
+    "route": "performance",
+    "context_used": false,
+    "chunk_ids_used": [],
+    "generation_time": 2e-06
+  }
+]

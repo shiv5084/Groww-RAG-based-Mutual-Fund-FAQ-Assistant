@@ -1,0 +1,150 @@
+{
+  "phase": "1.2",
+  "total_urls": 14,
+  "successful_fetches": 14,
+  "failed_fetches": 0,
+  "total_fetch_time": 6.154781341552734,
+  "raw_dir": "data\\raw",
+  "results": [
+    {
+      "url_id": "URL-001",
+      "url": "https://www.hdfcfund.com",
+      "success": true,
+      "content_hash": "98c1e8ea6ad661a14d6cc704b41f9a220d21aff7702b71a6ed46360a7424e980",
+      "file_path": "data\\raw\\URL-001",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.9484505653381348
+    },
+    {
+      "url_id": "URL-002",
+      "url": "https://www.hdfcfund.com/explore/mutual-funds",
+      "success": true,
+      "content_hash": "c3489d4193dd3a35def0e949e10e75ce3f60a0d5107b98dc0b10b889a2397392",
+      "file_path": "data\\raw\\URL-002.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.5320675373077393
+    },
+    {
+      "url_id": "URL-003",
+      "url": "https://www.hdfcfund.com/services",
+      "success": true,
+      "content_hash": "c1c86b8620e6e832e62cf5848efbae73056e66ad303900baa2b6cdadf32825b6",
+      "file_path": "data\\raw\\URL-003.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.24782347679138184
+    },
+    {
+      "url_id": "URL-004",
+      "url": "https://www.hdfcfund.com/statutory-disclosure",
+      "success": true,
+      "content_hash": "8fdd529f9acf86ffa31d6a5e42740fc34a52a2ae5b974fda520f3986882d8923",
+      "file_path": "data\\raw\\URL-004.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.3725471496582031
+    },
+    {
+      "url_id": "URL-005",
+      "url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "success": true,
+      "content_hash": "6ca9de742dea9f2864bd204cda5420d55dc742c2cc6b533f603ec7f3c92692e5",
+      "file_path": "data\\raw\\URL-005.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.6393656730651855
+    },
+    {
+      "url_id": "URL-006",
+      "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "success": true,
+      "content_hash": "144b2cd9d763ac29c236053c84de887d7f8ea367a743ba7f62cee1549096fad9",
+      "file_path": "data\\raw\\URL-006.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.20157837867736816
+    },
+    {
+      "url_id": "URL-007",
+      "url": "https://groww.in/mutual-funds/hdfc-focused-fund-direct-growth",
+      "success": true,
+      "content_hash": "60dde39780803b2abfdf956a4e85067f4e9b0f98efc9b2c46d6f70795a760579",
+      "file_path": "data\\raw\\URL-007.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.21900153160095215
+    },
+    {
+      "url_id": "URL-010",
+      "url": "https://files.hdfcfund.com/s3fs-public/KIM/2025-05/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20May%2030%2C%202025.pdf",
+      "success": true,
+      "content_hash": "890044adba8793abaf199316913cdf04eb6aa03020b250aac3debdf5b67e469e",
+      "file_path": "data\\raw\\URL-010.pdf",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.6553730964660645
+    },
+    {
+      "url_id": "URL-08",
+      "url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "success": true,
+      "content_hash": "e94a7e659f6a1884e3ac4b20d016bf284833debe36ad8ec7f5f6ab3b1a70216d",
+      "file_path": "data\\raw\\URL-08.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.18538308143615723
+    },
+    {
+      "url_id": "URL-09",
+      "url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "success": true,
+      "content_hash": "e92c2a94a780b3bb49e6197a9e224e818f335f15bed10a676e60810bb0dcacc9",
+      "file_path": "data\\raw\\URL-09.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.17351055145263672
+    },
+    {
+      "url_id": "URL-11",
+      "url": "https://www.hdfcfund.com/learn/blog",
+      "success": true,
+      "content_hash": "a69beec65d382d1083c7ec92c6dec6c92b0d8772eb301fb214345e06b1d62b09",
+      "file_path": "data\\raw\\URL-11.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.1390516757965088
+    },
+    {
+      "url_id": "URL-12",
+      "url": "https://www.sebi.gov.in",
+      "success": true,
+      "content_hash": "3ab30719bc6e74e1c1dfb43b2b0df042172d7c0e00c573f50fc265297ad552fc",
+      "file_path": "data\\raw\\URL-12",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.7691378593444824
+    },
+    {
+      "url_id": "URL-13",
+      "url": "https://investor.sebi.gov.in/",
+      "success": true,
+      "content_hash": "705bc35665359b26cf6ed8035d15dc5c512598f2bb17e7576d372e933f1f3b41",
+      "file_path": "data\\raw\\URL-13.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.856149435043335
+    },
+    {
+      "url_id": "URL-14",
+      "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=5&ssid=26&smid=0",
+      "success": true,
+      "content_hash": "fa1e03ab9b522e3161c7361983922fafb6a693044786640cf35c4e6033bea657",
+      "file_path": "data\\raw\\URL-14.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.21534132957458496
+    }
+  ]
+}

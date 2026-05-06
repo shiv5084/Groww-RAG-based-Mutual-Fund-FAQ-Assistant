@@ -1,0 +1,11 @@
+# Official domains allowed for ingestion and citations
+https://www.hdfcfund.com
+https://hdfcfund.com
+https://files.hdfcfund.com
+https://investor-web.hdfcfund.com
+https://www.amfiindia.com
+https://amfiindia.com
+https://www.sebi.gov.in
+https://sebi.gov.in
+https://investor.sebi.gov.in
+https://groww.in

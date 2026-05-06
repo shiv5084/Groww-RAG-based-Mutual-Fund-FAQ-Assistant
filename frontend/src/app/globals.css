@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900;
+    background-image: url('/screen/screen.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #__next {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition-colors duration-200 font-medium;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border-2 border-green-700 p-6;
+  }
+  
+  .message-user {
+    @apply bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg;
+  }
+  
+  .message-assistant {
+    @apply bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg;
+  }
+  
+  .disclaimer {
+    @apply text-xs text-gray-600 bg-yellow-50 border border-yellow-200 rounded-lg p-3;
+  }
+}

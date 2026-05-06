@@ -1,0 +1,30 @@
+# Phase 9: Evaluation Configuration
+
+# Evaluation settings for Phase 9 testing framework
+evaluation:
+  # Golden Q&A file path
+  golden_qa_path: "doc/sample_qa.md"
+  
+  # Output paths
+  results_dir: "evaluations"
+  results_file: "evaluation_results.json"
+  
+  # Retrieval metrics thresholds
+  retrieval:
+    top_k: 5  # Number of top results to check for hit@k
+    min_similarity: 0.3  # Minimum similarity threshold
+  
+  # Response quality thresholds
+  response_quality:
+    min_word_overlap: 0.6  # Minimum word overlap for good answer
+    max_response_length: 500  # Maximum reasonable response length
+  
+  # Logging configuration
+  logging:
+    level: "INFO"
+    file: "evaluations/evaluation.log"
+  
+  # Test configuration
+  test:
+    parallel: false  # Run tests sequentially for debugging
+    save_intermediate: true  # Save detailed results for analysis

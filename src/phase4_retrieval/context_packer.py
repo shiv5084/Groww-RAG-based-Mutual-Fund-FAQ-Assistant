@@ -5,7 +5,7 @@ Builds context bundles with system prompts, user context, and citations
 for LLM generation based on route and retrieval results.
 """
 
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime
 
 from .types import RouteLabel, RetrievalResult, ContextBundle

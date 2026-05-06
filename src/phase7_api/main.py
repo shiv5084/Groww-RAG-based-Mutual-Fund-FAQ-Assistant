@@ -65,6 +65,8 @@ async def lifespan(app: FastAPI):
     global session_store, answer_generator, output_validator
     
     logger.info("Starting Phase 7 API Service...")
+    import os
+    logger.info(f"Port environment variable: {os.getenv('PORT', 'Not set (defaulting to 8000)')}")
     
     try:
         # Initialize Phase 6 session store

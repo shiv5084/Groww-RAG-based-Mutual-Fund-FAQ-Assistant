@@ -7,12 +7,6 @@
       "use": "@vercel/next"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ],
   "env": {
     "NEXT_PUBLIC_API_URL": "https://groww-rag-based-mutual-fund-faq-assistant.onrender.com/api/v1"
   }

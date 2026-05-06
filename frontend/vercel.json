@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "mutual-fund-faq-frontend",
+  "name": "groww-mf-ai-assistant",
   "builds": [
     {
       "src": "package.json",

@@ -1,0 +1,150 @@
+{
+  "phase": "1.2",
+  "total_urls": 14,
+  "successful_fetches": 14,
+  "failed_fetches": 0,
+  "total_fetch_time": 11.306069612503052,
+  "raw_dir": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw",
+  "results": [
+    {
+      "url_id": "URL-001",
+      "url": "https://www.hdfcfund.com",
+      "success": true,
+      "content_hash": "337efe11a07dc34b8900058a7c1e0f56564da80c67136938c9ddb8686c32efc1",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-001",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 3.0859220027923584
+    },
+    {
+      "url_id": "URL-002",
+      "url": "https://www.hdfcfund.com/explore/mutual-funds",
+      "success": true,
+      "content_hash": "ebf737a1b15aab71e7422c3338cd8d40e043ec7165bc58f7bb0f049255914562",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-002.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.6292922496795654
+    },
+    {
+      "url_id": "URL-003",
+      "url": "https://www.hdfcfund.com/services",
+      "success": true,
+      "content_hash": "50f3aa5cd9be5bc92ed8e72d474547d07f7bef4c79eaecebeec00cd4787dbda7",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-003.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.24197030067443848
+    },
+    {
+      "url_id": "URL-004",
+      "url": "https://www.hdfcfund.com/statutory-disclosure",
+      "success": true,
+      "content_hash": "920da5581dbc462acb7c6f734ad681a85a66a2bcb567c90fb0ab712664a99c91",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-004.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 1.084122657775879
+    },
+    {
+      "url_id": "URL-005",
+      "url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "success": true,
+      "content_hash": "3616e9ccfd1aad060e072d626d67ca67af666998f01993d04c6a7ed7e3a455d7",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-005.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.9395880699157715
+    },
+    {
+      "url_id": "URL-006",
+      "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "success": true,
+      "content_hash": "d0ec6b3998c503548b03f6c8f4cf1e7a6d481016aa51fa2e602d1b2e8265f606",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-006.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.241654634475708
+    },
+    {
+      "url_id": "URL-007",
+      "url": "https://groww.in/mutual-funds/hdfc-focused-fund-direct-growth",
+      "success": true,
+      "content_hash": "a5e9cd2376d0c841f480a6cbc7998678980fc04c2472bf876e0d00b1d5215e6c",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-007.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.2642967700958252
+    },
+    {
+      "url_id": "URL-010",
+      "url": "https://files.hdfcfund.com/s3fs-public/KIM/2025-05/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20May%2030%2C%202025.pdf",
+      "success": true,
+      "content_hash": "890044adba8793abaf199316913cdf04eb6aa03020b250aac3debdf5b67e469e",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-010.pdf",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.9572601318359375
+    },
+    {
+      "url_id": "URL-08",
+      "url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "success": true,
+      "content_hash": "84684e09f31ba2b24ef8a7e46d562801a5f973a72bbf5564125960a5b5be1301",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-08.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.32657909393310547
+    },
+    {
+      "url_id": "URL-09",
+      "url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "success": true,
+      "content_hash": "bbcbc4041e7cfde023e909dbf961a6668674e435e5627fae74d334fcae4f3505",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-09.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.23147058486938477
+    },
+    {
+      "url_id": "URL-11",
+      "url": "https://www.hdfcfund.com/learn/blog",
+      "success": true,
+      "content_hash": "dca05956112e7daf2fc79f7fa1f441347492bc6162b09f3e7ceadb7efbd6bd87",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-11.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.29318761825561523
+    },
+    {
+      "url_id": "URL-12",
+      "url": "https://www.sebi.gov.in",
+      "success": true,
+      "content_hash": "3ab30719bc6e74e1c1dfb43b2b0df042172d7c0e00c573f50fc265297ad552fc",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-12",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 1.4343745708465576
+    },
+    {
+      "url_id": "URL-13",
+      "url": "https://investor.sebi.gov.in/",
+      "success": true,
+      "content_hash": "705bc35665359b26cf6ed8035d15dc5c512598f2bb17e7576d372e933f1f3b41",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-13.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 1.3291480541229248
+    },
+    {
+      "url_id": "URL-14",
+      "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=5&ssid=26&smid=0",
+      "success": true,
+      "content_hash": "5eb67ecf22c931bb89c22e3b6310e474eaf7ef78bcc80f81c640d705b703819c",
+      "file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\raw\\URL-14.html",
+      "error_message": null,
+      "status_code": 200,
+      "fetch_time": 0.24720287322998047
+    }
+  ]
+}

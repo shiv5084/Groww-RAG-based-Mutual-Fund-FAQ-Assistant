@@ -1,0 +1,176 @@
+# Scheduled Pipeline Refresh
+#
+# This workflow runs the full RAG pipeline on a schedule to keep data fresh.
+# It fetches latest AMC pages, re-chunks, re-indexes, and validates.
+#
+# Triggers:
+#   - Daily at 10:00 AM IST (4:30 AM UTC)
+#   - Manual trigger via workflow_dispatch
+#
+# Note: This workflow commits and pushes /data/index and /data/bm25
+#       back to the repository so Render can auto-deploy with fresh data.
+
+name: Scheduled Corpus Pipeline Refresh
+
+on:
+  # Run daily at 4:30 AM UTC (10:00 AM IST)
+  schedule:
+    - cron: '30 4 * * *'
+  
+  # Manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      phases:
+        description: 'Phases to run (comma-separated: fetch,chunk,index,validate or "all")'
+        required: true
+        default: 'all'
+        type: string
+
+jobs:
+  pipeline-refresh:
+    name: Run Full Pipeline Refresh
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push data back to repo
+    
+    # Prevent concurrent runs
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    
+    timeout-minutes: 120  # 2 hour timeout
+    
+    steps:
+      # ─────────────────────────────────────────
+      # 1. Checkout repository
+      # ─────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Full history not needed for pipeline runs
+          fetch-depth: 1
+      
+      # ─────────────────────────────────────────
+      # 2. Set up Python
+      # ─────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      # ─────────────────────────────────────────
+      # 3. Install Python dependencies
+      # ─────────────────────────────────────────
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      # ─────────────────────────────────────────
+      # 5. Cache processed data
+      # ─────────────────────────────────────────
+      - name: Cache ChromaDB index
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/index/chroma
+            data/bm25
+          key: chroma-index-${{ hashFiles('data/chunks/chunks.jsonl') }}
+          restore-keys: |
+            chroma-index-
+      
+      # ─────────────────────────────────────────
+      # 6. Run scheduler pipeline
+      # ─────────────────────────────────────────
+      - name: Run pipeline scheduler
+        run: |
+          PHASES="${{ github.event.inputs.phases || 'all' }}"
+          
+          if [ "$PHASES" = "all" ]; then
+            python src/scripts/run_scheduler.py --full
+          else
+            python src/scripts/run_scheduler.py --phases "$PHASES"
+          fi
+        env:
+          PYTHONUNBUFFERED: "1"
+          # Disable Chrome sandbox for CI environment
+          CHROME_BIN: /usr/bin/chromium-browser
+        continue-on-error: true  # Capture artifacts even if pipeline fails
+      
+      # ─────────────────────────────────────────
+      # 7. Upload scheduler logs
+      # ─────────────────────────────────────────
+      - name: Upload scheduler logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scheduler-logs-${{ github.run_id }}
+          path: |
+            logs/scheduler/
+            data/artifacts/scheduler_report.json
+          retention-days: 7
+      
+      # ─────────────────────────────────────────
+      # 8. Upload updated index (optional artifact)
+      # ─────────────────────────────────────────
+      - name: Upload index artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: index-data-${{ github.run_id }}
+          path: |
+            data/index/embedding.jsonl
+            data/index/chroma/
+            data/bm25/
+          retention-days: 1  # Fresh data generated daily, keep only for debugging
+          compression-level: 9  # Compress large ChromaDB files
+      
+      # ─────────────────────────────────────────
+      # 9. Upload evaluation results
+      # ─────────────────────────────────────────
+      - name: Upload evaluation results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evaluation-results-${{ github.run_id }}
+          path: |
+            evaluations/
+            data/artifacts/phase5_*.json
+          retention-days: 7
+      
+      # ─────────────────────────────────────────
+      # 10. Commit and push updated index data for Render
+      # ─────────────────────────────────────────
+      - name: Commit and push data/index and data/bm25
+        if: github.ref == 'refs/heads/master'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage only the data directories Render needs
+          git add data/index/ data/bm25/
+
+          # Commit only if there are changes
+          if git diff --cached --quiet; then
+            echo "No index changes to commit"
+          else
+            git commit -m "chore: auto-update index and BM25 data [$(date -u +%Y-%m-%d %H:%M UTC)]"
+            git push
+            echo "Pushed updated index and BM25 data to repo"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ─────────────────────────────────────────
+      # 11. Pipeline status notification
+      # ─────────────────────────────────────────
+      - name: Check pipeline status
+        if: always()
+        run: |
+          echo "::notice::Pipeline refresh complete. Check artifacts for results."
+          if [ -f "data/artifacts/scheduler_report.json" ]; then
+            echo "::group::Pipeline Summary"
+            cat data/artifacts/scheduler_report.json | python -m json.tool
+            echo "::endgroup::"
+          fi

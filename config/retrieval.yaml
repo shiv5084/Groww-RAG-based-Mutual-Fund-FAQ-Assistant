@@ -1,0 +1,141 @@
+# Phase 4 Retrieval Configuration
+
+# Intent Router Configuration
+router:
+  advisory_patterns:
+    - "\\b(better|best|good|bad|worst|recommend|advice|suggest|should|which|compare|vs|versus|choose|pick|select|prefer|opinion|think|believe)\\b"
+    - "\\b(invest|put money|allocate|portfolio|diversify|risk appetite|financial goals|investment strategy)\\b"
+    - "\\b(worth it|good investment|bad investment|should i|can i|is it)\\b"
+    - "\\b(advantage|disadvantage|pro|con|benefit|drawback)\\b"
+  
+  performance_patterns:
+    - "\\b(returns|performance|profit|gain|loss|growth|decline|increase|decrease|rise|fall)\\b"
+    - "\\b(nav|net asset value|price|cost|expense|fee|charge|load|exit load|entry load)\\b"
+    - "\\b(historical|past|year|month|quarter|annual|monthly|1y|3y|5y|10y)\\b"
+    - "\\b(percentage|percent|%|roi|irr|xirr|cagr)\\b"
+    - "\\b(top performing|best performing|highest|lowest|ranking|rating)\\b"
+  
+  factual_patterns:
+    - "\\b(what|how|where|when|who|why|explain|describe|define|details|information|about)\\b"
+    - "\\b(scheme|plan|option|category|type|class|fund|amc|asset management|company)\\b"
+    - "\\b(process|procedure|steps|how to|way to|method|approach)\\b"
+    - "\\b(document|documentary|kyc|pan|aadhaar|verification|registration|account|open)\\b"
+    - "\\b(tax|taxation|deduction|benefit|section|80c|80d|10|10da)\\b"
+    - "\\b(lock-in|maturity|redemption|withdraw|switch|purchase|buy|sell)\\b"
+  
+  scheme_specific_patterns:
+    - "\\b(elss|ppf|epf|nps|scss|ssy|fd|rd|mutual fund|sip|lumpsum|swp|stp)\\b"
+    - "\\b(equity|debt|hybrid|balanced|arbitrage|gold|international|sector|thematic)\\b"
+    - "\\b(large cap|mid cap|small cap|multi cap|flexi cap)\\b"
+  
+  refusal_keywords:
+    - "\\b(advice|recommendation|suggestion|guidance|counsel|consult)\\b"
+    - "\\b(financial planning|investment planning|portfolio advice)\\b"
+
+# Retrieval Engine Configuration
+retrieval:
+  # Search parameters
+  top_k: 8                    # Initial retrieval count
+  final_k: 3                  # Final chunks to return
+  min_score_threshold: 0.1     # Minimum similarity score
+  dedupe_threshold: 0.9       # Deduplication similarity threshold
+  
+  # Document type priorities for primary chunk selection
+  doc_type_priorities:
+    factsheet: 1.0
+    kii: 0.9                   # Key Information Document
+    prospectus: 0.8
+    amc_home: 0.7
+    scheme_document: 0.6
+    other: 0.5
+  
+  # Maximal Marginal Relevance (MMR) settings
+  mmr_enabled: true
+  mmr_lambda: 0.7             # MMR diversity weight (0.0 = max diversity, 1.0 = max relevance)
+  
+  # Caching settings
+  cache_enabled: true
+  cache_ttl: 3600             # Cache TTL in seconds
+
+# Context Packer Configuration
+context_packer:
+  # Maximum context length in characters
+  max_context_length: 4000
+  
+  # Include chunk metadata in context
+  include_metadata: true
+  
+  # Citation format: "url" or "chunk_id"
+  citation_format: "url"
+  
+  # Educational links for advisory responses
+  educational_links:
+    - "https://www.sebi.gov.in"
+    - "https://www.amfiindia.com"
+  
+  # System prompts for different routes
+  system_prompts:
+    advisory: |
+      You are a mutual fund information assistant. You must NOT provide investment advice, 
+      recommendations, or comparisons. If the user asks for advice, recommendations, or comparisons, 
+      politely decline and suggest they consult a financial advisor. Provide only factual information 
+      about mutual fund processes and documentation.
+      
+      IMPORTANT: You must refuse to provide any investment advice, recommendations, or comparisons.
+      If the user asks for advice, respond with the refusal template and educational links.
+    
+    performance: |
+      You are a mutual fund information assistant. For performance/returns queries, provide only 
+      a brief factual response and direct the user to the official factsheet for complete information. 
+      Do not provide performance analysis or comparisons.
+      
+      IMPORTANT: For performance queries, provide only brief factual information.
+      Always include the official factsheet URL for complete performance data.
+    
+    factual: |
+      You are a mutual fund information assistant. Provide factual answers based only on the 
+      provided context. If the context doesn't contain sufficient information, state this clearly 
+      and suggest consulting official documentation. Never provide investment advice or recommendations.
+      
+      Use only the provided context to answer. If insufficient, state this clearly.
+
+# Phase 3 Integration Settings
+phase3_integration:
+  # Embedding model settings
+  embedding_model: "BAAI/bge-small-en-v1.5"
+  embedding_device: "cpu"
+  
+  # Vector store settings
+  vector_store_collection: "mf_faq_chunks"
+  vector_store_path: "data/index/chroma"
+  
+  # BM25 index settings
+  bm25_index_path: "data/bm25"
+  
+  # Hybrid retrieval settings
+  hybrid_alpha: 0.5             # Weight for semantic vs lexical search
+
+# Logging and Monitoring
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Enable detailed retrieval logging
+  enable_retrieval_debug: false
+  
+  # Log classification decisions
+  log_routing_decisions: true
+
+# Performance Settings
+performance:
+  # Maximum concurrent retrievals
+  max_concurrent_retrievals: 10
+  
+  # Request timeout in seconds
+  request_timeout: 30
+  
+  # Enable performance metrics collection
+  enable_metrics: true
+  
+  # Metrics collection interval in seconds
+  metrics_interval: 60

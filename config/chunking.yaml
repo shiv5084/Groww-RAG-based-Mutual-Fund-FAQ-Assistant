@@ -1,0 +1,85 @@
+# Phase 2: Chunking Configuration
+# Configuration for phase2_chunking strategies and parameters
+
+# Fixed window chunking parameters
+window_size: 600                    # Target window size (characters)
+overlap_size: 60                    # Overlap size (characters, ~10%)
+min_chunk_size: 100                 # Minimum chunk size
+
+# Section-aware chunking parameters
+min_section_size: 50                # Minimum section size
+max_section_size: 2000              # Maximum section size
+combine_short_sections: true        # Combine very short sections
+
+# Quality parameters
+min_content_quality: 0.3            # Minimum quality score (0.0-1.0)
+prefer_meaningful_chunks: true      # Prefer chunks with meaningful content
+
+# Processing parameters
+strip_html_tags: true               # Strip HTML tags for text extraction
+preserve_section_titles: true        # Keep section titles in chunks
+detect_language: true                # Detect chunk language
+
+# Strategy selection
+# Options: "section_aware", "fixed_window", "hybrid"
+default_strategy: "hybrid"
+
+# Document type specific settings
+doc_type_settings:
+  scheme_page:
+    prefer_section_aware: true
+    min_chunk_size: 150
+    window_size: 800
+  
+  factsheet:
+    prefer_section_aware: true
+    min_chunk_size: 200
+    max_section_size: 1500
+  
+  investor_guide:
+    prefer_section_aware: true
+    min_chunk_size: 100
+    window_size: 700
+  
+  regulatory_guidance:
+    prefer_section_aware: true
+    min_chunk_size: 120
+    window_size: 600
+  
+  faq:
+    prefer_section_aware: true
+    min_chunk_size: 80
+    max_section_size: 1000
+  
+  general:
+    prefer_section_aware: false
+    min_chunk_size: 100
+    window_size: 600
+
+# Advanced settings
+advanced:
+  # Sentence boundary detection
+  use_sentence_boundaries: true
+  min_sentence_chunk_size: 50
+  
+  # Language-specific settings
+  language_settings:
+    en:
+      window_size: 600
+      overlap_size: 60
+    hi:
+      window_size: 500
+      overlap_size: 50
+  
+  # Quality assessment
+  quality_thresholds:
+    very_low: 0.1
+    low: 0.3
+    medium: 0.5
+    high: 0.7
+    very_high: 0.9
+  
+  # Chunk filtering
+  filter_empty_chunks: true
+  filter_duplicate_chunks: true
+  duplicate_threshold: 0.9

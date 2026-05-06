@@ -1,0 +1,24 @@
+[
+  {
+    "answer": "HDFC Equity Fund is a large-cap equity scheme that invests primarily in large-cap companies with a focus on long-term capital appreciation. It follows a growth-oriented investment style and aims to generate returns by investing in a diversified portfolio of large-cap stocks. The fund's primary goal is to generate returns through long-term capital appreciation.\n\nhttps://www.hdfcfund.com",
+    "citation_url": "https://www.hdfcfund.com",
+    "refusal": false,
+    "route": "factual",
+    "context_used": true,
+    "chunk_ids_used": [
+      "hdfc_equity_001"
+    ],
+    "generation_time": 0.816833
+  },
+  {
+    "answer": "The AUM of HDFC Flexi Cap Fund is ₹100,479.23 Cr as of 30/04/26. See the official website for complete details: https://www.hdfcfund.com",
+    "citation_url": "https://www.hdfcfund.com",
+    "refusal": false,
+    "route": "factual",
+    "context_used": true,
+    "chunk_ids_used": [
+      "URL-001_section_aware_0000"
+    ],
+    "generation_time": 0.394741
+  }
+]

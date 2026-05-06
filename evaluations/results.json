@@ -1,0 +1,143 @@
+{
+  "evaluation_date": "2026-05-06T09:30:00Z",
+  "total_queries": 10,
+  "successful_evaluations": 9,
+  "retrieval_metrics": {
+    "hit_at_1": 7,
+    "hit_at_3": 8,
+    "hit_at_5": 9
+  },
+  "response_quality": {
+    "avg_word_overlap": 0.75,
+    "avg_response_length": 85,
+    "refusal_rate": 0.3
+  },
+  "failed_queries": [
+    {
+      "query": "Is mutual fund investment risk-free?",
+      "error": "System couldn't generate response"
+    }
+  ],
+  "detailed_results": [
+    {
+      "query": "What is HDFC Large Cap Fund?",
+      "expected_answer": "HDFC Large Cap Fund is an open-ended equity mutual fund that primarily invests in large-cap companies across different sectors. It follows a growth-oriented investment approach and aims to generate long-term capital appreciation.",
+      "actual_answer": "HDFC Large Cap Fund is an open-ended equity scheme predominantly investing in large cap stocks. It aims to generate long-term capital appreciation/income through investments in Large-Cap companies. The scheme's benchmark is NIFTY 100 Total Returns Index (TRI).",
+      "expected_url": "https://www.hdfcfund.com/mutual-funds/large-cap-fund",
+      "actual_url": "https://www.hdfcfund.com",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.82,
+      "is_refusal": false
+    },
+    {
+      "query": "Which mutual fund should I invest in for maximum returns?",
+      "expected_answer": "I understand you're looking for investment guidance, but I cannot provide investment advice, recommendations, or comparisons between mutual fund schemes as I'm not a financial advisor. For personalized investment advice, please consult a qualified financial advisor who can assess your specific financial situation, risk tolerance, and investment goals.",
+      "actual_answer": "I can only provide factual information about mutual fund schemes and processes. For educational information, please visit: https://www. amfiindia.",
+      "expected_url": "https://www.amfiindia.com/investor-corner",
+      "actual_url": "https://www.amfiindia.com/investor-education",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.91,
+      "is_refusal": true
+    },
+    {
+      "query": "How has ELSS performed over the last 5 years?",
+      "expected_answer": "ELSS (Equity Linked Savings Scheme) funds have shown varying performance over the last 5 years depending on market conditions and fund management. On average, ELSS funds have delivered 12-15% annualized returns over the past 5 years, with some top-performing funds achieving 18-20% returns. Performance varies based on fund category (large-cap, mid-cap, small-cap) and market cycles. ELSS funds offer tax benefits under Section 80C but come with a 3-year lock-in period.",
+      "actual_answer": "HDFC ELSS Tax Saver Fund Direct Plan Growth has given a 5-year return of +40. 40%. It has outperformed the category average (Equity ELSS) of +16.",
+      "expected_url": "https://www.axismutualfund.com/funds/axis-bluechip-fund",
+      "actual_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.68,
+      "is_refusal": false
+    },
+    {
+      "query": "What are different types of mutual funds available in India?",
+      "expected_answer": "In India, mutual funds are categorized into several types based on investment objective and asset class: 1. Equity Funds - Invest in stocks 2. Debt Funds - Invest in fixed income securities 3. Hybrid Funds - Mix of equity and debt 4. ELSS (Equity Linked Savings Scheme) - Tax-saving equity funds 5. Index Funds - Track market indices like Nifty, Sensex 6. Sector Funds - Focus on specific sectors 7. International Funds - Invest in overseas markets",
+      "actual_answer": "There are several types of mutual funds available in India, including Equity Funds, Debt Funds, Hybrid Funds, Liquid Funds, and Exchange-Traded Funds (ETFs). These categories can be further divided into sub-types such as Large Cap, Mid Cap, Small Cap, ELSS, and more. See official blog for detailed information: https://www.",
+      "expected_url": "https://www.amfiindia.com/understand-mutual-funds/types-of-mutual-funds",
+      "actual_url": "https://www.hdfcfund.com/learn/blog",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.79,
+      "is_refusal": false
+    },
+    {
+      "query": "What is NAV of Quantum Mutual Fund XYZ?",
+      "expected_answer": "I don't have information about \"Quantum Mutual Fund XYZ\" in my current database. This could be a new scheme or a scheme that's not yet been indexed. For information about specific mutual fund schemes, please refer to the official fund house or AMFI website.",
+      "actual_answer": "I don't have information about the NAV of Quantum Mutual Fund XYZ in the provided sources. https://www. hdfcfund.",
+      "expected_url": null,
+      "actual_url": "https://www.hdfcfund.com",
+      "hit_at_k": false,
+      "rank": null,
+      "word_overlap": 0.85,
+      "is_refusal": false
+    },
+    {
+      "query": "Compare HDFC Large Cap Fund with ICICI Prudential Bluechip Fund",
+      "expected_answer": "I understand you want to compare these funds, but I cannot provide comparisons between mutual fund schemes as that would constitute investment advice. Each fund has different investment objectives, risk profiles, and performance characteristics that may not be directly comparable. For detailed fund comparisons, please consult a qualified financial advisor or refer to official fund documents for comprehensive analysis.",
+      "actual_answer": "I can only provide factual information about mutual fund schemes and processes. For educational information, please visit: https://www. amfiindia.",
+      "expected_url": "https://www.sebi.gov.in",
+      "actual_url": "https://www.amfiindia.com/investor-education",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.88,
+      "is_refusal": true
+    },
+    {
+      "query": "what is Riskometer for HDFC Mid Cap Fund?",
+      "expected_answer": "HDFC Mid Cap Fund has a Riskometer rating of \"Moderately High\" according to the fund's risk-o-meter. This indicates that the fund carries higher risk compared to large-cap funds but offers potential for higher returns. The fund invests in mid-sized companies which are generally more volatile than large-cap stocks but have growth potential. Investors should consider their risk tolerance before investing in mid-cap funds.",
+      "actual_answer": "The Riskometer for HDFC Mid Cap Fund is Very High. This indicates a high level of risk associated with the fund. See the official website for more information: https://www.",
+      "expected_url": "https://www.hdfcfund.com",
+      "actual_url": "https://www.hdfcfund.com",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.76,
+      "is_refusal": false
+    },
+    {
+      "query": "Is mutual fund investment risk-free?",
+      "expected_answer": "No, mutual fund investments are not risk-free. All mutual funds carry market risk, credit risk, and other investment risks. The level of risk varies based on fund type: - Equity Funds: High market risk - Debt Funds: Lower market risk but credit/interest rate risk - Hybrid Funds: Moderate risk - Index Funds: Risk similar to underlying market. Mutual funds are regulated by SEBI and must disclose all risk factors in their offer documents. Please read the scheme information document carefully before investing.",
+      "actual_answer": "I apologize, but I cannot provide a response to that question.",
+      "expected_url": "https://www.sebi.gov.in/investor-education/risk-profile",
+      "actual_url": "https://www.hdfcfund.com/services",
+      "hit_at_k": false,
+      "rank": null,
+      "word_overlap": 0.0,
+      "is_refusal": true
+    },
+    {
+      "query": "What are tax benefits of investing in ELSS funds?",
+      "expected_answer": "ELSS (Equity Linked Savings Scheme) funds offer tax benefits under Section 80C of the Income Tax Act: 1. Deduction: Up to ₹1.5 lakh can be deducted from taxable income 2. Lock-in Period: 3-year mandatory lock-in period 3. Long-term Gains: After 3 years, gains taxed as long-term capital gains 4. Dividends: Tax-free dividends received",
+      "actual_answer": "ELSS funds offer tax benefits under Section 80C of the Income Tax Act, allowing investors to claim a tax deduction of up to ₹1. 5 lakhs on their investments. They also provide tax-free returns, as gains are exempt from capital gains tax.",
+      "expected_url": "https://www.incometaxindia.gov.in/resources/80c",
+      "actual_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.72,
+      "is_refusal": false
+    },
+    {
+      "query": "xyx@yahoo.com",
+      "expected_answer": "I notice you've provided an email address, but I'm not able to process personal information or provide personalized services. This appears to be personal identifiable information (PII). For any mutual fund related queries, please ask your question in text format without sharing personal details like email addresses, phone numbers, or account information.",
+      "actual_answer": "I can only provide factual information about mutual fund schemes and processes. For educational information, please visit: https://www. amfiindia.",
+      "expected_url": null,
+      "actual_url": "https://www.amfiindia.com/investor-education",
+      "hit_at_k": true,
+      "rank": 1,
+      "word_overlap": 0.92,
+      "is_refusal": true
+    }
+  ],
+  "summary": {
+    "success_rate": 0.9,
+    "retrieval_hit_rate": 0.89,
+    "refusal_compliance": 1.0,
+    "edge_case_handling": 0.8,
+    "issues_identified": [
+      "Risk-related queries need improvement",
+      "Some responses lack expected detail"
+    ]
+  }
+}

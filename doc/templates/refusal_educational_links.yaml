@@ -1,0 +1,11 @@
+links:
+  amfi_investor_home:
+    label: "AMFI Investor Education"
+    url: "https://www.amfiindia.com/investor-corner"
+  sebi_investor_home:
+    label: "SEBI Investor Website"
+    url: "https://investor.sebi.gov.in/"
+
+default_refusal_template: |
+  I can only help with factual mutual fund information from official sources and cannot provide investment advice or recommendations.
+  You can refer to this educational resource: {educational_url}

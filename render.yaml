@@ -5,15 +5,11 @@ services:
     plan: free
     region: oregon # Or your preferred Render region
     buildCommand: pip install -r requirements.txt && python -c "from fastembed import TextEmbedding; TextEmbedding(model_name='BAAI/bge-small-en-v1.5')"
-    startCommand: gunicorn -w 1 -k uvicorn.workers.UvicornWorker --timeout 120 src.phase7_api.main:app --bind 0.0.0.0:$PORT
+    startCommand: gunicorn -w 1 -k uvicorn.workers.UvicornWorker --timeout 120 --log-level debug src.phase7_api.main:app --bind 0.0.0.0:$PORT
     healthCheckPath: /api/v1/health
     envVars:
       - key: GROQ_API_KEY
         sync: false # Set this in the Render dashboard
-      - key: PYTHON_VERSION
-        value: 3.11.0
-      - key: NODE_ENV
-        value: production
       - key: CORS_ORIGINS
         sync: false # Set to Vercel origin URLs (comma-separated)
     autoDeploy: true

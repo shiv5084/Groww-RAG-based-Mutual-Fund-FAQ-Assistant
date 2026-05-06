@@ -12,9 +12,11 @@ import {
   StatsResponse,
 } from '@/types/api';
 
-const API_BASE_URL = typeof window !== 'undefined' && window.location?.hostname === 'localhost' 
-  ? `http://localhost:${process.env.NEXT_PUBLIC_BACKEND_PORT || 8000}/api/v1` 
-  : '/api/v1';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || (
+  typeof window !== 'undefined' && window.location?.hostname === 'localhost' 
+    ? `http://localhost:${process.env.NEXT_PUBLIC_BACKEND_PORT || 8000}/api/v1` 
+    : '/api/v1'
+);
 
 class ApiError extends Error {
   constructor(

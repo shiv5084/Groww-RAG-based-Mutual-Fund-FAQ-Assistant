@@ -57,6 +57,8 @@ intent_router: Optional[IntentRouter] = None
 retrieval_engine: Optional[RetrievalEngine] = None
 context_packer: Optional[ContextPacker] = None
 start_time: datetime = datetime.utcnow()
+initialization_lock = asyncio.Lock()
+is_initialized: bool = False
 
 
 @asynccontextmanager
@@ -69,7 +71,7 @@ async def lifespan(app: FastAPI):
     logger.info(f"Port environment variable: {os.getenv('PORT', 'Not set (defaulting to 8000)')}")
     
     try:
-        # Initialize Phase 6 session store
+        # Initialize Phase 6 session store (lightweight, keep in lifespan)
         session_config = SessionConfig(
             max_history_length=10,
             session_timeout_minutes=60,
@@ -79,67 +81,7 @@ async def lifespan(app: FastAPI):
         session_store = SQLiteSessionStore(str(ROOT_DIR / "data/sessions/threads.db"), session_config)
         logger.info("Session store initialized")
         
-        # Load retrieval configuration
-        config_path = ROOT_DIR / "config/retrieval.yaml"
-        if not config_path.exists():
-            logger.error(f"Retrieval config not found at {config_path}")
-            raise FileNotFoundError(f"Retrieval config not found at {config_path}")
-            
-        with open(config_path, 'r') as f:
-            retrieval_config = yaml.safe_load(f)
-            
-        # Initialize Phase 3 components for retrieval
-        logger.info("Initializing retrieval components...")
-        embedding_config = retrieval_config.get('phase3_integration', {})
-        embedding_engine = EmbeddingEngine(
-            model_name=embedding_config.get('embedding_model', 'BAAI/bge-small-en-v1.5'),
-            device=embedding_config.get('embedding_device', 'cpu')
-        )
-        vector_store_config = embedding_config.get('vector_store', {})
-        vector_store = VectorStore(
-            persist_directory=ROOT_DIR / vector_store_config.get('vector_store_path', 'data/index/chroma'),
-            collection_name=vector_store_config.get('vector_store_collection', 'mf_faq_chunks')
-        )
-        bm25_index_path = ROOT_DIR / embedding_config.get('bm25_index_path', 'data/bm25')
-        bm25_index = BM25Index(bm25_index_path)
-        hybrid_config = embedding_config.get('hybrid_retrieval', {})
-        hybrid_retriever = HybridRetriever(
-            embedding_engine=embedding_engine,
-            vector_store=vector_store,
-            bm25_index=bm25_index,
-            alpha=hybrid_config.get('hybrid_alpha', 0.5)
-        )
-        logger.info("Hybrid retriever initialized")
-        # Initialize Phase 4 components
-        global intent_router, retrieval_engine, context_packer
-        router_config = retrieval_config.get('router', {})
-        intent_router = IntentRouter(router_config)
-        
-        ret_engine_config = retrieval_config.get('retrieval', {})
-        retrieval_engine = RetrievalEngine(
-            embedding_engine=embedding_engine,
-            vector_store=vector_store,
-            hybrid_retriever=hybrid_retriever,
-            config=ret_engine_config
-        )
-        logger.info("Retrieval engine initialized")
-        cp_config = retrieval_config.get('context_packer', {})
-        if 'system_prompts' in retrieval_config:
-            cp_config['system_prompts'] = retrieval_config['system_prompts']
-        context_packer = ContextPacker(cp_config)
-        logger.info("Context packer initialized")
-        logger.info("Full retrieval pipeline initialized successfully")
-        
-        # Initialize Phase 5 generation pipeline
-        try:
-            answer_generator = AnswerGenerator()
-            output_validator = OutputValidator()
-            logger.info("Generation pipeline initialized")
-        except Exception as e:
-            logger.warning(f"Generation pipeline initialization failed: {e}")
-            logger.info("API will run in session-only mode")
-        
-        logger.info("Phase 7 API Service started successfully")
+        logger.info("Phase 7 API Service started (AI components will lazy-load on first request)")
         yield
         
     except Exception as e:
@@ -150,6 +92,74 @@ async def lifespan(app: FastAPI):
         if session_store:
             await session_store.close()
         logger.info("Phase 7 API Service stopped")
+
+
+async def ensure_initialized():
+    """Ensure all AI and retrieval components are loaded (Lazy loading)."""
+    global is_initialized, intent_router, retrieval_engine, context_packer
+    global answer_generator, output_validator
+    
+    if is_initialized:
+        return
+        
+    async with initialization_lock:
+        if is_initialized:
+            return
+            
+        logger.info("Lazy loading AI and retrieval components...")
+        try:
+            # Load retrieval configuration
+            config_path = ROOT_DIR / "config/retrieval.yaml"
+            with open(config_path, 'r') as f:
+                retrieval_config = yaml.safe_load(f)
+                
+            # Initialize Phase 3 components
+            embedding_config = retrieval_config.get('phase3_integration', {})
+            embedding_engine = EmbeddingEngine(
+                model_name=embedding_config.get('embedding_model', 'BAAI/bge-small-en-v1.5'),
+                device=embedding_config.get('embedding_device', 'cpu')
+            )
+            vector_store_config = embedding_config.get('vector_store', {})
+            vector_store = VectorStore(
+                persist_directory=ROOT_DIR / vector_store_config.get('vector_store_path', 'data/index/chroma'),
+                collection_name=vector_store_config.get('vector_store_collection', 'mf_faq_chunks')
+            )
+            bm25_index_path = ROOT_DIR / embedding_config.get('bm25_index_path', 'data/bm25')
+            bm25_index = BM25Index(bm25_index_path)
+            hybrid_config = embedding_config.get('hybrid_retrieval', {})
+            hybrid_retriever = HybridRetriever(
+                embedding_engine=embedding_engine,
+                vector_store=vector_store,
+                bm25_index=bm25_index,
+                alpha=hybrid_config.get('hybrid_alpha', 0.5)
+            )
+            
+            # Initialize Phase 4 components
+            router_config = retrieval_config.get('router', {})
+            intent_router = IntentRouter(router_config)
+            
+            ret_engine_config = retrieval_config.get('retrieval', {})
+            retrieval_engine = RetrievalEngine(
+                embedding_engine=embedding_engine,
+                vector_store=vector_store,
+                hybrid_retriever=hybrid_retriever,
+                config=ret_engine_config
+            )
+            
+            cp_config = retrieval_config.get('context_packer', {})
+            if 'system_prompts' in retrieval_config:
+                cp_config['system_prompts'] = retrieval_config['system_prompts']
+            context_packer = ContextPacker(cp_config)
+            
+            # Initialize Phase 5 generation pipeline
+            answer_generator = AnswerGenerator()
+            output_validator = OutputValidator()
+            
+            is_initialized = True
+            logger.info("AI and retrieval components loaded successfully")
+        except Exception as e:
+            logger.error(f"Lazy loading failed: {e}")
+            # We don't raise here to allow the API to stay up
 
 
 # Create FastAPI application
@@ -345,6 +355,11 @@ async def send_message(thread_id: str, request: MessageCreateRequest) -> Assista
         thread = await store.get_thread(thread_id)
         if not thread:
             raise HTTPException(status_code=404, detail="Thread not found")
+        
+        # Ensure AI components are loaded
+        await ensure_initialized()
+        
+        # Redact PII from user message before processing
         
         # Add user message
         user_message = Message(

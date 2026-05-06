@@ -14,9 +14,6 @@
     }
   ],
   "env": {
-    "NEXT_PUBLIC_API_URL": {
-      "description": "URL of the backend API",
-      "value": "https://your-backend.onrender.com/api/v1"
-    }
+    "NEXT_PUBLIC_API_URL": "https://groww-rag-based-mutual-fund-faq-assistant.onrender.com/api/v1"
   }
 }

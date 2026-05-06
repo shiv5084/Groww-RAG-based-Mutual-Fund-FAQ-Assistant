@@ -135,8 +135,8 @@ dmypy.json
 # Project-specific data directories
 data/raw/
 data/text/
-data/index/
-data/bm25/
+# data/index/  <-- Allowed for deployment
+# data/bm25/   <-- Allowed for deployment
 data/sessions/
 data/cache/
 

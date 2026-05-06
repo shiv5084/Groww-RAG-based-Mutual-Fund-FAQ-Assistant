@@ -173,7 +173,7 @@ The system implements a sophisticated hybrid retrieval mechanism combining:
 | Phase | Technology | Purpose |
 |-------|------------|---------|
 | **Phase 2-3** | `sentence-transformers` | Text embeddings for semantic search |
-| **Phase 2-3** | Chroma / LanceDB | Local vector database |
+| **Phase 2-3** | Chroma | Local vector database |
 | **Phase 2-3** | `whoosh` | BM25 lexical search (hybrid retrieval) |
 | **Phase 4-5** | OpenAI / Anthropic APIs | LLM for answer generation |
 | **Phase 6** | SQLite / Redis | Session storage for multi-thread support |

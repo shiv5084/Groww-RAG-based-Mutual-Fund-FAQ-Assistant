@@ -258,7 +258,7 @@ config/
 
 - **Embedding model:** Small, cost-effective multilingual or English model consistent with your doc language (e.g. sentence-transformers class or hosted API).
 use BAAI/bge-small-en-v1.5 via sentence-transformers class
-- **Vector store:** Local (Chroma, LanceDB, Qdrant embedded) or managed (Pinecone, etc.)—choose based on deployment constraints.
+- **Vector store:** Local (Chroma or Qdrant embedded) or managed (Pinecone, etc.)—choose based on deployment constraints.
 use ChromaDB for local storage
 - **lexical backup:** BM25 on the same chunks for hybrid retrieval (improves exact matches like “exit load 1%”).
 
@@ -281,7 +281,7 @@ src/
     run_index.py               # CLI: chunks.jsonl → embeddings → vector store
 data/
   index/                       # (gitignored) vendor store dir, e.
-    embedding.jsonl                   g. chroma/ lancedb/
+    embedding.jsonl                   g. chroma/ 
                                # embedding vectors with metadata
   bm25/                        # (gitignored) Whoosh/
     bm25_index.*               #BM25 search index files
@@ -648,7 +648,7 @@ Phases **6** (sessions) and **5** (guards) can be developed in parallel after **
 |-------|---------------------|
 | Runtime | Python 3.11+ or Node 20+ |
 | Parsing | `PyMuPDF`, `trafilatura` / `readability` for HTML |
-| Embeddings + local vector | `sentence-transformers` + Chroma or LanceDB |
+| Embeddings + local vector | `sentence-transformers` + Chroma |
 | LLM | One small general model via API or local; temperature low (e.g. 0.1–0.3) |
 | UI | Streamlit, Gradio, or a minimal React/Vite SPA |
 | Sessions | SQLite or Redis for thread message lists |

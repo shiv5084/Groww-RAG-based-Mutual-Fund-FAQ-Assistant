@@ -23,7 +23,8 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 # Add src to path for imports
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+ROOT_DIR = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(ROOT_DIR / "src"))
 
 from phase6_sessions.models import Thread, Message, MessageRole as SessionMessageRole, SessionConfig
 from phase6_sessions.sqlite_store import SQLiteSessionStore
@@ -73,11 +74,11 @@ async def lifespan(app: FastAPI):
             cleanup_interval_minutes=30,
             max_concurrent_sessions=1000
         )
-        session_store = SQLiteSessionStore("data/sessions/threads.db", session_config)
+        session_store = SQLiteSessionStore(str(ROOT_DIR / "data/sessions/threads.db"), session_config)
         logger.info("Session store initialized")
         
         # Load retrieval configuration
-        config_path = Path("config/retrieval.yaml")
+        config_path = ROOT_DIR / "config/retrieval.yaml"
         if not config_path.exists():
             logger.error(f"Retrieval config not found at {config_path}")
             raise FileNotFoundError(f"Retrieval config not found at {config_path}")
@@ -94,10 +95,10 @@ async def lifespan(app: FastAPI):
         )
         vector_store_config = embedding_config.get('vector_store', {})
         vector_store = VectorStore(
-            persist_directory=Path(vector_store_config.get('vector_store_path', 'data/index/chroma')),
+            persist_directory=ROOT_DIR / vector_store_config.get('vector_store_path', 'data/index/chroma'),
             collection_name=vector_store_config.get('vector_store_collection', 'mf_faq_chunks')
         )
-        bm25_index_path = Path(embedding_config.get('bm25_index_path', 'data/bm25'))
+        bm25_index_path = ROOT_DIR / embedding_config.get('bm25_index_path', 'data/bm25')
         bm25_index = BM25Index(bm25_index_path)
         hybrid_config = embedding_config.get('hybrid_retrieval', {})
         hybrid_retriever = HybridRetriever(

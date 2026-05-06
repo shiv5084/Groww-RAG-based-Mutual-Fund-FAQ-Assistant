@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: Groww-RAG-MutualFundFAQAssistant-backend
+    env: python
+    plan: free
+    region: oregon # Or your preferred Render region
+    buildCommand: pip install -r requirements.txt
+    startCommand: PYTHONPATH=src python -m uvicorn phase6.api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false # Set this in the Render dashboard
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGINS
+        sync: false # Set to Vercel origin URLs (comma-separated)
+    autoDeploy: true

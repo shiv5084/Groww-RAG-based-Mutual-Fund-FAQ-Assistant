@@ -13,7 +13,7 @@ PyMuPDF>=1.23.0
 trafilatura>=1.6.0
 
 # Phase 2-3: Embeddings and vector store
-sentence-transformers>=2.2.0
+fastembed>=0.2.0
 chromadb>=0.4.0
 numpy>=1.24.0
 

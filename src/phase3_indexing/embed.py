@@ -12,27 +12,27 @@ import numpy as np
 from datetime import datetime
 
 try:
-    from sentence_transformers import SentenceTransformer
-    HAS_SENTENCE_TRANSFORMERS = True
+    from fastembed import TextEmbedding
+    HAS_FASTEMBED = True
 except ImportError:
-    HAS_SENTENCE_TRANSFORMERS = False
+    HAS_FASTEMBED = False
 
 logger = logging.getLogger(__name__)
 
 
 class EmbeddingEngine:
-    """Handles embedding of text chunks using sentence-transformers."""
+    """Handles embedding of text chunks using fastembed (memory-efficient)."""
     
     def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5", device: str = "cpu"):
         """
         Initialize embedding engine.
         
         Args:
-            model_name: Name of the sentence-transformers model
+            model_name: Name of the fastembed model
             device: Device to run embeddings on ('cpu', 'cuda', etc.)
         """
-        if not HAS_SENTENCE_TRANSFORMERS:
-            raise ImportError("sentence-transformers is required. Install with: pip install sentence-transformers")
+        if not HAS_FASTEMBED:
+            raise ImportError("fastembed is required. Install with: pip install fastembed")
         
         self.model_name = model_name
         self.device = device
@@ -40,12 +40,13 @@ class EmbeddingEngine:
         self._load_model()
     
     def _load_model(self):
-        """Load the sentence-transformers model."""
+        """Load the fastembed model."""
         try:
-            self.model = SentenceTransformer(self.model_name, device=self.device)
-            logger.info(f"Loaded embedding model: {self.model_name}")
+            # FastEmbed uses a slightly different initialization
+            self.model = TextEmbedding(model_name=self.model_name)
+            logger.info(f"Loaded fastembed model: {self.model_name}")
         except Exception as e:
-            logger.error(f"Failed to load model {self.model_name}: {e}")
+            logger.error(f"Failed to load fastembed model {self.model_name}: {e}")
             raise
     
     def embed_chunks(self, chunks: List[Dict[str, Any]], batch_size: int = 32) -> List[Dict[str, Any]]:
@@ -112,16 +113,9 @@ class EmbeddingEngine:
             return []
         
         # Embed in batches
-        embeddings = []
-        for i in range(0, len(texts), batch_size):
-            batch_texts = texts[i:i + batch_size]
-            batch_embeddings = self.model.encode(
-                batch_texts,
-                convert_to_numpy=True,
-                normalize_embeddings=True,
-                show_progress_bar=True
-            )
-            embeddings.extend(batch_embeddings)
+        # fastembed.embed() returns an iterator of embeddings
+        embeddings_iter = self.model.embed(texts, batch_size=batch_size)
+        embeddings = list(embeddings_iter)
         
         # Add embeddings to chunks
         embedded_chunks = []
@@ -147,11 +141,9 @@ class EmbeddingEngine:
         if not self.model:
             raise RuntimeError("Model not loaded")
         
-        embedding = self.model.encode(
-            text,
-            convert_to_numpy=True,
-            normalize_embeddings=True
-        )
+        # fastembed.embed() always returns an iterator
+        embeddings_iter = self.model.embed([text])
+        embedding = list(embeddings_iter)[0]
         return embedding.tolist()
     
     def save_embeddings(self, embedded_chunks: List[Dict[str, Any]], output_path: Path):

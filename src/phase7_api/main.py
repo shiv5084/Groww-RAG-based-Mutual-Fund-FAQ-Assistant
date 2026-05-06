@@ -109,7 +109,7 @@ async def lifespan(app: FastAPI):
             bm25_index=bm25_index,
             alpha=hybrid_config.get('hybrid_alpha', 0.5)
         )
-        
+        logger.info("Hybrid retriever initialized")
         # Initialize Phase 4 components
         global intent_router, retrieval_engine, context_packer
         router_config = retrieval_config.get('router', {})
@@ -122,12 +122,13 @@ async def lifespan(app: FastAPI):
             hybrid_retriever=hybrid_retriever,
             config=ret_engine_config
         )
-        
+        logger.info("Retrieval engine initialized")
         cp_config = retrieval_config.get('context_packer', {})
         if 'system_prompts' in retrieval_config:
             cp_config['system_prompts'] = retrieval_config['system_prompts']
         context_packer = ContextPacker(cp_config)
-        logger.info("Retrieval pipeline initialized")
+        logger.info("Context packer initialized")
+        logger.info("Full retrieval pipeline initialized successfully")
         
         # Initialize Phase 5 generation pipeline
         try:

@@ -7,4 +7,22 @@ Expense ratio: 0.76%
 Rating: 5
 Exit Load: Exit load of 1% if redeemed within 1 year.
 
-| Over the past | Total investment | Would've become | Historic returns | Returns | |---|---|---|---|---| | 1 year | ₹60,000 | ₹62,138 | +3.56% | | | 3 years | ₹1,80,000 | ₹2,19,270 | +21.82% | | | 5 years | ₹3,00,000 | ₹4,86,371 | +62.12% | | | 10 years | ₹6,00,000 | ₹17,09,066 | +184.84% | | Name | 3Y | 5Y | 10Y | All | |---|---|---|---|---| | Fund returns | +24.7% | +22.5% | +19.4% | +20.4% | | Category average (Equity Mid Cap) | +21.6% | +21.5% | +16.0% | -- | | Rank (Equity Mid Cap) | 12 | 5 | 5 | -- | | Name | 1Y | 3Y | Fund Size(Cr) | | |---|---|---|---|---| WhiteOak Capital Mid Cap Fund Direct Growth | +21.78% | +28.45% | 4,490.64 | | Edelweiss Mid Cap Direct Plan Growth | +17.56% | +27.27% | 13,553.62 | | Nippon India Growth Mid Cap Fund Direct Growth | +18.58% | +26.90% | 39,676.13 | | Sundaram Mid Cap Fund Direct Growth | +17.89% | +25.98% | 11,898.19 | | HDFC Mid Cap Fund Direct Growth | +15.40% | +24.70% | 85,357.92 | | | Compare |
+| Over the past | Total investment | Would've become | Historic returns | Returns |
+|---|---|---|---|---|
+| 1 year | ₹60,000 | ₹62,138 | +3.56% | |
+| 3 years | ₹1,80,000 | ₹2,19,270 | +21.82% | |
+| 5 years | ₹3,00,000 | ₹4,86,371 | +62.12% | |
+| 10 years | ₹6,00,000 | ₹17,09,066 | +184.84% |
+| Name | 3Y | 5Y | 10Y | All |
+|---|---|---|---|---|
+| Fund returns | +24.7% | +22.5% | +19.4% | +20.4% |
+| Category average (Equity Mid Cap) | +21.6% | +21.5% | +16.0% | -- |
+| Rank (Equity Mid Cap) | 12 | 5 | 5 | -- |
+| Name | 1Y | 3Y | Fund Size(Cr) | |
+|---|---|---|---|---|
+WhiteOak Capital Mid Cap Fund Direct Growth | +21.78% | +28.45% | 4,490.64 | |
+Edelweiss Mid Cap Direct Plan Growth | +17.56% | +27.27% | 13,553.62 | |
+Nippon India Growth Mid Cap Fund Direct Growth | +18.58% | +26.90% | 39,676.13 | |
+Sundaram Mid Cap Fund Direct Growth | +17.89% | +25.98% | 11,898.19 | |
+HDFC Mid Cap Fund Direct Growth | +15.40% | +24.70% | 85,357.92 | |
+| Compare |

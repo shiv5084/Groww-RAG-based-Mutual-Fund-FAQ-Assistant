@@ -7,4 +7,70 @@ Expense ratio: 0.98%
 Rating: 4
 Exit Load: Exit load of 1% if redeemed within 1 year
 
-| Over the past | Total investment | Would've become | Historic returns | Returns | |---|---|---|---|---| | 1 year | ₹60,000 | ₹59,029 | -1.62% | | | 3 years | ₹1,80,000 | ₹1,93,697 | +7.61% | | | 5 years | ₹3,00,000 | ₹3,88,889 | +29.63% | | | 10 years | ₹6,00,000 | ₹11,82,027 | +97.00% | | Name | Sector | Instruments | Assets | |---|---|---|---| | ICICI Bank Ltd. | Financial | Equity | 9.39% | | HDFC Bank Ltd. | Financial | Equity | 8.00% | | Bharti Airtel Ltd. | Communication | Equity | 5.99% | | Reliance Industries Ltd. | Energy | Equity | 5.40% | | Kotak Mahindra Bank Ltd. | Financial | Equity | 5.13% | | Titan Company Ltd. | Consumer Discretionary | Equity | 4.59% | | Infosys Ltd. | Technology | Equity | 3.99% | | Torrent Pharmaceuticals Ltd. | Healthcare | Equity | 3.79% | | Axis Bank Ltd. | Financial | Equity | 3.51% | | Bajaj Auto Ltd. | Automobile | Equity | 3.09% | | Lupin Ltd. | Healthcare | Equity | 3.01% | | Bajaj Finserv Ltd. | Financial | Equity | 2.64% | | Ambuja Cements Ltd. | Construction | Equity | 2.52% | | NTPC Ltd. | Energy | Equity | 2.33% | | Cholamandalam Investment and Finance Company Ltd. | Financial | Equity | 2.00% | | Eternal Ltd. | Services | Equity | 1.95% | | Tata Motors Ltd. | Automobile | Equity | 1.91% | | State Bank of India | Financial | Equity | 1.76% | | Interglobe Aviation Ltd. | Services | Equity | 1.67% | | United Spirits Ltd. | Consumer Staples | Equity | 1.64% | | Mankind Pharma Ltd. | Healthcare | Equity | 1.55% | | Vishal Mega Mart Ltd. | Services | Equity | 1.46% | | Tata Consumer Products Ltd. | Consumer Staples | Equity | 1.45% | | Havells India Ltd. | Capital Goods | Equity | 1.45% | | Max Healthcare Institute Ltd. | Healthcare | Equity | 1.36% | | Indusind Bank Ltd. | Financial | Equity | 1.31% | | Larsen & Toubro Ltd. | Construction | Equity | 1.29% | | Maruti Suzuki India Ltd. | Automobile | Equity | 1.25% | | Eicher Motors Ltd. | Automobile | Equity | 1.16% | | Hyundai Motor India Ltd. | Automobile | Equity | 1.10% | | ICICI Prudential Asset Management Company Ltd. | Financial | Equity | 1.08% | | SRF Ltd. | Chemicals | Equity | 0.95% | | Swiggy Ltd. | Services | Equity | 0.84% | | Mahindra & Mahindra Ltd. | Automobile | Equity | 0.82% | | Adani Ports and Special Economic Zone Ltd. | Services | Equity | 0.81% | | Dabur India Ltd. | Consumer Staples | Equity | 0.80% | | Tata Motors Passenger Vehicles Ltd. | Automobile | Equity | 0.62% | | Sun Pharmaceutical Industries Ltd. | Healthcare | Equity | 0.59% | | GOI | Sovereign | GOI Sec | 0.53% | | Tata Capital Ltd. | Financial | Equity | 0.52% | | CG Power and Industrial Solutions Ltd. | Capital Goods | Equity | 0.50% | | DLF Ltd. | Construction | Equity | 0.30% | | Cummins India Ltd. | Capital Goods | Equity | 0.29% | | Billionbrains Garage Ventures Ltd. | Financial | Equity | 0.24% | | Hindalco Industries Ltd. | Metals & Mining | Equity | 0.22% | | SBI Life Insurance Company Ltd. | Insurance | Equity | 0.20% | | Name | 3Y | 5Y | 10Y | All | |---|---|---|---|---| | Fund returns | +13.4% | +14.4% | +14.2% | +13.2% | | Category average (Equity Large Cap) | +15.1% | +15.0% | +13.2% | -- | | Rank (Equity Large Cap) | 46 | 15 | 11 | -- | | Name | 1Y | 3Y | Fund Size(Cr) | | |---|---|---|---|---| Invesco India Largecap Fund Direct Growth | +6.37% | +17.52% | 1,536.88 | | Nippon India Large Cap Fund Direct Growth | +5.62% | +16.80% | 46,520.53 | | WhiteOak Capital Large Cap Fund Direct Growth | +5.13% | +16.80% | 1,045.06 | | DSP Large Cap Fund Direct Growth | -0.04% | +15.89% | 6,619.60 | | ICICI Prudential Large Cap Fund Direct Growth | +2.61% | +15.89% | 69,947.55 | | | Compare |
+| Over the past | Total investment | Would've become | Historic returns | Returns |
+|---|---|---|---|---|
+| 1 year | ₹60,000 | ₹59,029 | -1.62% | |
+| 3 years | ₹1,80,000 | ₹1,93,697 | +7.61% | |
+| 5 years | ₹3,00,000 | ₹3,88,889 | +29.63% | |
+| 10 years | ₹6,00,000 | ₹11,82,027 | +97.00% |
+| Name | Sector | Instruments | Assets |
+|---|---|---|---|
+| ICICI Bank Ltd. | Financial | Equity | 9.39% |
+| HDFC Bank Ltd. | Financial | Equity | 8.00% |
+| Bharti Airtel Ltd. | Communication | Equity | 5.99% |
+| Reliance Industries Ltd. | Energy | Equity | 5.40% |
+| Kotak Mahindra Bank Ltd. | Financial | Equity | 5.13% |
+| Titan Company Ltd. | Consumer Discretionary | Equity | 4.59% |
+| Infosys Ltd. | Technology | Equity | 3.99% |
+| Torrent Pharmaceuticals Ltd. | Healthcare | Equity | 3.79% |
+| Axis Bank Ltd. | Financial | Equity | 3.51% |
+| Bajaj Auto Ltd. | Automobile | Equity | 3.09% |
+| Lupin Ltd. | Healthcare | Equity | 3.01% |
+| Bajaj Finserv Ltd. | Financial | Equity | 2.64% |
+| Ambuja Cements Ltd. | Construction | Equity | 2.52% |
+| NTPC Ltd. | Energy | Equity | 2.33% |
+| Cholamandalam Investment and Finance Company Ltd. | Financial | Equity | 2.00% |
+| Eternal Ltd. | Services | Equity | 1.95% |
+| Tata Motors Ltd. | Automobile | Equity | 1.91% |
+| State Bank of India | Financial | Equity | 1.76% |
+| Interglobe Aviation Ltd. | Services | Equity | 1.67% |
+| United Spirits Ltd. | Consumer Staples | Equity | 1.64% |
+| Mankind Pharma Ltd. | Healthcare | Equity | 1.55% |
+| Vishal Mega Mart Ltd. | Services | Equity | 1.46% |
+| Tata Consumer Products Ltd. | Consumer Staples | Equity | 1.45% |
+| Havells India Ltd. | Capital Goods | Equity | 1.45% |
+| Max Healthcare Institute Ltd. | Healthcare | Equity | 1.36% |
+| Indusind Bank Ltd. | Financial | Equity | 1.31% |
+| Larsen & Toubro Ltd. | Construction | Equity | 1.29% |
+| Maruti Suzuki India Ltd. | Automobile | Equity | 1.25% |
+| Eicher Motors Ltd. | Automobile | Equity | 1.16% |
+| Hyundai Motor India Ltd. | Automobile | Equity | 1.10% |
+| ICICI Prudential Asset Management Company Ltd. | Financial | Equity | 1.08% |
+| SRF Ltd. | Chemicals | Equity | 0.95% |
+| Swiggy Ltd. | Services | Equity | 0.84% |
+| Mahindra & Mahindra Ltd. | Automobile | Equity | 0.82% |
+| Adani Ports and Special Economic Zone Ltd. | Services | Equity | 0.81% |
+| Dabur India Ltd. | Consumer Staples | Equity | 0.80% |
+| Tata Motors Passenger Vehicles Ltd. | Automobile | Equity | 0.62% |
+| Sun Pharmaceutical Industries Ltd. | Healthcare | Equity | 0.59% |
+| GOI | Sovereign | GOI Sec | 0.53% |
+| Tata Capital Ltd. | Financial | Equity | 0.52% |
+| CG Power and Industrial Solutions Ltd. | Capital Goods | Equity | 0.50% |
+| DLF Ltd. | Construction | Equity | 0.30% |
+| Cummins India Ltd. | Capital Goods | Equity | 0.29% |
+| Billionbrains Garage Ventures Ltd. | Financial | Equity | 0.24% |
+| Hindalco Industries Ltd. | Metals & Mining | Equity | 0.22% |
+| SBI Life Insurance Company Ltd. | Insurance | Equity | 0.20% |
+| Name | 3Y | 5Y | 10Y | All |
+|---|---|---|---|---|
+| Fund returns | +13.4% | +14.4% | +14.2% | +13.2% |
+| Category average (Equity Large Cap) | +15.1% | +15.0% | +13.2% | -- |
+| Rank (Equity Large Cap) | 46 | 15 | 11 | -- |
+| Name | 1Y | 3Y | Fund Size(Cr) | |
+|---|---|---|---|---|
+Invesco India Largecap Fund Direct Growth | +6.37% | +17.52% | 1,536.88 | |
+Nippon India Large Cap Fund Direct Growth | +5.62% | +16.80% | 46,520.53 | |
+WhiteOak Capital Large Cap Fund Direct Growth | +5.13% | +16.80% | 1,045.06 | |
+DSP Large Cap Fund Direct Growth | -0.04% | +15.89% | 6,619.60 | |
+ICICI Prudential Large Cap Fund Direct Growth | +2.61% | +15.89% | 69,947.55 | |
+| Compare |

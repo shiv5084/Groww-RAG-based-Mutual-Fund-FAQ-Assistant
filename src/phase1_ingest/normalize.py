@@ -95,8 +95,8 @@ class TextNormalizer:
         for pattern, replacement in self.compiled_patterns:
             text = pattern.sub(replacement, text)
         
-        # Normalize whitespace
-        text = re.sub(r'\s+', ' ', text)
+        # Normalize horizontal whitespace (tabs, multiple spaces) but keep newlines
+        text = re.sub(r'[ \t]+', ' ', text)
         
         # Remove excessive newlines
         text = re.sub(r'\n\s*\n\s*\n+', '\n\n', text)

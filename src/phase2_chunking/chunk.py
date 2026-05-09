@@ -308,7 +308,7 @@ class SectionAwareChunker(BaseChunker):
     def _extract_element_text(self, element: Tag) -> str:
         """Extract clean text from element."""
         if self.config.strip_html_tags:
-            return element.get_text(separator=' ', strip=True)
+            return element.get_text(separator='\n', strip=True)
         else:
             return str(element)
     

@@ -62,7 +62,13 @@ flowchart LR
 | Work item | Detail |
 |-----------|--------|
 | Source policy | Written allowlist: AMC domain(s), `amfiindia.com`, `sebi.gov.in` (and any AMC subdomains you explicitly add). Blocklist pattern for blogs and aggregators. |
-| AMC and schemes | One AMC; 3–5 schemes across categories (e.g. large-cap, flexi-cap, ELSS). |
+| AMC and schemes | One AMC; 3–5 schemes across categories (e.g.  large-cap, flexi-cap, ELSS). |
+| Financial metrics like Expense ratio,Net Asset Value (NAV),Exit Load,Lock-in,Min. for SIP,Fund size(AUM),riskometer for following HDFC Schemes:  
+1. HDFC Large Cap Fund Direct Growth    
+2. HDFC ELSS Tax Saver Fund Direct Plan Growth 
+3. HDFC Focused Fund Direct Growth
+4. HDFC Flexi Cap Direct Plan Growth 
+5. HDFC Mid Cap Fund Direct Growth |
 | URL registry | 15–25 URLs with labels: factsheet,FAQ, SEBI page. Version this file in git. |
 | Answer contract | Max **3 sentences**; **exactly one** citation URL; footer `Last updated from sources: <date>`; refusals must include **one** educational link. |
 | Performance queries | Policy: no numbers from the model—**factsheet link only** (optionally one sentence: “See the official factsheet for performance data.”). |
@@ -74,7 +80,6 @@ The current iteration intentionally excludes these source classes from active in
 - **AMC PDFs** such as **SID** documents.
 - **AMFI guidance pages** (including investor education/knowledge-center pages).
 - **Statement and tax-related documents** (including capital-gains and statement download flows).
-- fewer financial metrics 
 
 These remain planned sources for future phases. The ingestion pipeline must support adding them later by **URL-registry/config updates only**, without redesigning fetch, normalization, chunking, or indexing architecture.
 

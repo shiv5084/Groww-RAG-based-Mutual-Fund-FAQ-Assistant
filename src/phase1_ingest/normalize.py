@@ -64,6 +64,7 @@ class TextNormalizer:
         self.raw_dir = Path(raw_dir)
         self.text_dir = Path(text_dir)
         self.text_dir.mkdir(parents=True, exist_ok=True)
+        logger.info(f"TextNormalizer initialized. BS4 available: {HAS_BS4}, Trafilatura available: {HAS_TRAFILATURA}")
         
         # Common boilerplate patterns to remove
         self.boilerplate_patterns = [
@@ -119,14 +120,80 @@ class TextNormalizer:
             extracted = trafilatura.extract(content, include_comments=False, 
                                            include_tables=True, include_formatting=False)
             
+            # For Groww pages, we still want our custom field extraction
+            # so we'll use BS4 just for that part even if trafilatura succeeded
+            groww_fields = ""
+            if HAS_BS4 and ("groww.in" in content or "Groww" in content):
+                soup = BeautifulSoup(content, 'html.parser')
+                groww_fields = self._extract_groww_fields(soup)
+            
             if extracted:
-                return self._clean_text(extracted)
+                cleaned_text = self._clean_text(extracted)
+                if groww_fields:
+                    return f"{groww_fields}\n\n{cleaned_text}"
+                return cleaned_text
+            elif groww_fields:
+                return groww_fields
             
         except Exception as e:
             logger.warning(f"Trafilatura extraction failed for {file_path}: {e}")
         
         return None
     
+    def _extract_groww_fields(self, soup: BeautifulSoup) -> str:
+        """Extract specific mutual fund fields from Groww HTML."""
+        fields = []
+        
+        # 1. Scheme Name
+        name_elem = soup.find('h1', class_=re.compile(r'header_schemeName'))
+        if name_elem:
+            fields.append(f"Scheme Name: {name_elem.get_text(strip=True)}")
+            
+        # 2. Riskometer (from pills or specific risk labels)
+        risk_pill = soup.find('div', class_=re.compile(r'pill12Pill'), string=re.compile(r'Risk'))
+        if not risk_pill:
+            # Try searching in spans inside pills
+            risk_span = soup.find('span', class_=re.compile(r'bodySmallHeavy'), string=re.compile(r'Risk'))
+            if risk_span:
+                risk_pill = risk_span.parent
+        
+        if risk_pill:
+            fields.append(f"Riskometer: {risk_pill.get_text(strip=True)}")
+            
+        # 3. Fund Details (NAV, Min SIP, Fund Size, Expense Ratio)
+        # These are usually in containers with class fundDetails_gap4__E4x8C
+        detail_containers = soup.find_all('div', class_=re.compile(r'fundDetails_gap4__E4x8C'))
+        for container in detail_containers:
+            # Some labels are in divs with contentTertiary
+            label_elem = container.find('div', class_=re.compile(r'contentTertiary'))
+            # Some values are in divs with contentPrimary or bodyXLargeHeavy
+            value_elem = container.find('div', class_=re.compile(r'contentPrimary|bodyXLargeHeavy'))
+            
+            if label_elem and value_elem:
+                label = label_elem.get_text(strip=True).replace(':', '').strip()
+                value = value_elem.get_text(strip=True).strip()
+                if label and value:
+                    fields.append(f"{label}: {value}")
+
+        # 4. Exit Load
+        # Exit load is often under a heading in the section exitLoadStampDutyTax
+        exit_load_header = soup.find(['h3', 'h4'], string=re.compile(r'Exit load', re.I))
+        if exit_load_header:
+            # Look for the next div with contentSecondary
+            exit_load_content = exit_load_header.find_next('div', class_=re.compile(r'contentSecondary'))
+            if exit_load_content:
+                fields.append(f"Exit Load: {exit_load_content.get_text(strip=True)}")
+
+        # 5. Lock-in (specifically for ELSS)
+        lock_in_elem = soup.find('span', class_=re.compile(r'bodyBaseHeavy'), string=re.compile(r'Lock-in'))
+        if lock_in_elem:
+            fields.append(f"Lock-in Period: {lock_in_elem.get_text(strip=True)}")
+        elif any("ELSS" in f for f in fields):
+            # Fallback for ELSS if lock-in not explicitly found but it's an ELSS fund
+            fields.append("Lock-in Period: 3 years (standard for ELSS)")
+
+        return "\n".join(fields)
+
     def _parse_html_with_bs4(self, file_path: Path) -> Optional[str]:
         """Parse HTML using BeautifulSoup as fallback."""
         if not HAS_BS4:
@@ -137,6 +204,11 @@ class TextNormalizer:
                 content = f.read()
             
             soup = BeautifulSoup(content, 'html.parser')
+            
+            # Extract Groww-specific fields if it looks like a Groww page
+            groww_fields = ""
+            if "groww.in" in content or soup.find(string=re.compile("Groww")):
+                groww_fields = self._extract_groww_fields(soup)
             
             # Remove script and style elements
             for script in soup(["script", "style", "nav", "footer", "header"]):
@@ -158,8 +230,13 @@ class TextNormalizer:
             
             # Extract text
             text = main_content.get_text(separator=' ', strip=True)
+            cleaned_text = self._clean_text(text)
             
-            return self._clean_text(text)
+            # Combine groww fields with general content
+            if groww_fields:
+                return f"{groww_fields}\n\n{cleaned_text}"
+            
+            return cleaned_text
             
         except Exception as e:
             logger.warning(f"BeautifulSoup extraction failed for {file_path}: {e}")

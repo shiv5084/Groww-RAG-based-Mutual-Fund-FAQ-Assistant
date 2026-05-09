@@ -90,7 +90,7 @@
       "doc_id": "URL-005",
       "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
       "doc_type": "scheme_page",
-      "scheme": "HDFC Mid Cap Fund — Direct Growth",
+      "scheme": "HDFC Mid Cap Fund \u00e2\u20ac\u201d Direct Growth",
       "source_owner": "AMC",
       "verification_status": "verified",
       "fetched_at": "2026-05-09T19:45:01.330067",
@@ -102,7 +102,7 @@
       "normalized": true,
       "normalized_at": "2026-05-09T19:45:01.330069",
       "text_file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-005.txt",
-      "text_length": 958,
+      "text_length": 1190,
       "normalization_error": null,
       "processing_status": "completed"
     },
@@ -110,7 +110,7 @@
       "doc_id": "URL-006",
       "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
       "doc_type": "scheme_page",
-      "scheme": "HDFC Equity Fund — Direct Growth",
+      "scheme": "HDFC Equity Fund \u00e2\u20ac\u201d Direct Growth",
       "source_owner": "AMC",
       "verification_status": "verified",
       "fetched_at": "2026-05-09T19:45:01.330075",
@@ -122,7 +122,7 @@
       "normalized": true,
       "normalized_at": "2026-05-09T19:45:01.330076",
       "text_file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-006.txt",
-      "text_length": 4592,
+      "text_length": 4827,
       "normalization_error": null,
       "processing_status": "completed"
     },
@@ -130,7 +130,7 @@
       "doc_id": "URL-007",
       "source_url": "https://groww.in/mutual-funds/hdfc-focused-fund-direct-growth",
       "doc_type": "scheme_page",
-      "scheme": "HDFC Focused Fund — Direct Growth",
+      "scheme": "HDFC Focused Fund \u00e2\u20ac\u201d Direct Growth",
       "source_owner": "AMC",
       "verification_status": "verified",
       "fetched_at": "2026-05-09T19:45:01.330081",
@@ -142,7 +142,7 @@
       "normalized": true,
       "normalized_at": "2026-05-09T19:45:01.330083",
       "text_file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-007.txt",
-      "text_length": 2722,
+      "text_length": 2953,
       "normalization_error": null,
       "processing_status": "completed"
     },
@@ -170,7 +170,7 @@
       "doc_id": "URL-08",
       "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
       "doc_type": "scheme_page",
-      "scheme": "HDFC ELSS Tax Saver — Direct Plan Growth",
+      "scheme": "HDFC ELSS Tax Saver \u00e2\u20ac\u201d Direct Plan Growth",
       "source_owner": "AMC",
       "verification_status": "verified",
       "fetched_at": "2026-05-09T19:45:01.330094",
@@ -182,7 +182,7 @@
       "normalized": true,
       "normalized_at": "2026-05-09T19:45:01.330096",
       "text_file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-08.txt",
-      "text_length": 977,
+      "text_length": 1217,
       "normalization_error": null,
       "processing_status": "completed"
     },
@@ -190,7 +190,7 @@
       "doc_id": "URL-09",
       "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
       "doc_type": "scheme_page",
-      "scheme": "HDFC Large Cap Fund — Direct Growth",
+      "scheme": "HDFC Large Cap Fund \u00e2\u20ac\u201d Direct Growth",
       "source_owner": "AMC",
       "verification_status": "verified",
       "fetched_at": "2026-05-09T19:45:01.330101",
@@ -202,7 +202,7 @@
       "normalized": true,
       "normalized_at": "2026-05-09T19:45:01.330103",
       "text_file_path": "C:\\Users\\HP\\Desktop\\shiv\\programming project\\Git_hub project\\Groww-RAG-MutualFundFAQAssistant\\data\\processed\\text\\URL-09.txt",
-      "text_length": 3643,
+      "text_length": 3878,
       "normalization_error": null,
       "processing_status": "completed"
     },
@@ -319,8 +319,8 @@
       "completed": 14
     },
     "text_statistics": {
-      "total_characters": 92179,
-      "average_characters": 6584,
+      "total_characters": 93352,
+      "average_characters": 6668,
       "min_characters": 217,
       "max_characters": 69951
     }

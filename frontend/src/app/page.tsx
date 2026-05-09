@@ -7,7 +7,7 @@ import { Thread, Message, AssistantResponse } from '@/types/api';
 const EXAMPLE_QUESTIONS = [
   "What is HDFC Large Cap Fund?",
   "What are the different types of mutual funds?",
-  "What is the lock-in period for ELSS?",
+  "what is Lock-in HDFC ELSS Tax Saver Fund Direct Plan Growth ?",
 ];
 export default function HomePage() {
   const messagesEndRef = useRef<HTMLDivElement>(null);

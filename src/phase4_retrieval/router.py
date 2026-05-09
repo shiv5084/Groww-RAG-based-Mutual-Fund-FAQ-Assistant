@@ -35,14 +35,14 @@ class IntentRouter:
                 r"\b(advantage|disadvantage|pro|con|benefit|drawback)\b"
             ],
             "performance_patterns": [
-                r"\b(returns|performance|profit|gain|loss|growth|decline|increase|decrease|rise|fall)\b",
-                r"\b(nav|net asset value|price|cost|expense|fee|charge|load|exit load|entry load)\b",
+                r"\b(returns|profit|gain|loss|growth|decline|increase|decrease|rise|fall)\b",
                 r"\b(historical|past|year|month|quarter|annual|monthly|1y|3y|5y|10y)\b",
-                r"\b(percentage|percent|%|roi|irr|xirr|cagr)\b",
+                r"\b(roi|irr|xirr|cagr)\b",
                 r"\b(top performing|best performing|highest|lowest|ranking|rating)\b"
             ],
             "factual_patterns": [
                 r"\b(what|how|where|when|who|why|explain|describe|define|details|information|about)\b",
+                r"\b(nav|net asset value|price|cost|expense|fee|charge|load|exit load|entry load|aum|fund size)\b",
                 r"\b(scheme|plan|option|category|type|class|fund|amc|asset management|company)\b",
                 r"\b(process|procedure|steps|how to|way to|method|approach)\b",
                 r"\b(document|documentary|kyc|pan|aadhaar|verification|registration|account|open)\b",

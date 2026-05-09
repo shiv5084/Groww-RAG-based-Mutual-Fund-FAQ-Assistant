@@ -314,8 +314,8 @@ class SectionAwareChunker(BaseChunker):
     
     def _clean_section_text(self, text: str) -> str:
         """Clean section text."""
-        # Remove excessive whitespace
-        text = re.sub(r'\s+', ' ', text)
+        # Replace 3 or more newlines with 2
+        text = re.sub(r'\n{3,}', '\n\n', text)
         # Remove leading/trailing whitespace
         text = text.strip()
         return text
@@ -570,8 +570,8 @@ class FixedWindowChunker(BaseChunker):
     
     def _clean_text(self, text: str) -> str:
         """Clean text for chunking."""
-        # Remove excessive whitespace
-        text = re.sub(r'\s+', ' ', text)
+        # Replace 3 or more newlines with 2
+        text = re.sub(r'\n{3,}', '\n\n', text)
         # Remove leading/trailing whitespace
         text = text.strip()
         return text
@@ -583,7 +583,6 @@ class FixedWindowChunker(BaseChunker):
             r'(.+?\.)\s+',     # End with period
             r'(.+?\!)\s+',     # End with exclamation
             r'(.+?\?)\s+',     # End with question mark
-            r'(.+?[:;])\s+',   # End with colon or semicolon
         ]
         
         for pattern in sentence_patterns:

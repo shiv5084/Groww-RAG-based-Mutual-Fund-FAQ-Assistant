@@ -146,12 +146,12 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
     open: { 
       width: isMobile ? '100%' : '320px',
       x: 0,
-      transition: { type: 'spring', stiffness: 300, damping: 30 }
+      transition: { type: 'spring' as const, stiffness: 300, damping: 30 }
     },
     closed: { 
       width: isMobile ? '0px' : '80px',
       x: isMobile ? -320 : 0,
-      transition: { type: 'spring', stiffness: 300, damping: 30 }
+      transition: { type: 'spring' as const, stiffness: 300, damping: 30 }
     }
   };
 
@@ -170,7 +170,7 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
       perspective: 1000,
       scale: 1,
       transition: { 
-        type: 'spring', 
+        type: 'spring' as const, 
         stiffness: 200, 
         damping: 20 
       }

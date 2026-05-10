@@ -134,7 +134,7 @@ export default function HomePage() {
   return (
     <div className="flex h-screen bg-gray-950 overflow-hidden">
       <Sidebar onToggle={setSidebarOpen} />
-      
+
       <div
         className={`flex-1 h-screen flex flex-col bg-cover bg-center bg-fixed relative overflow-hidden transition-all duration-300 ${sidebarOpen ? 'lg:ml-[320px]' : 'lg:ml-[80px]'}`}
         style={{ backgroundImage: "url('/screen.png')" }}
@@ -204,15 +204,15 @@ export default function HomePage() {
                     <div
                       key={message.id}
                       className={`p-5 rounded-3xl shadow-xl border animate-in fade-in slide-in-from-bottom-4 duration-500 ${message.role === 'user'
-                          ? 'bg-green-800 text-white ml-auto max-w-[85%] border-green-700'
-                          : 'bg-white/95 backdrop-blur-sm text-gray-900 mr-auto max-w-[85%] border-green-100'
+                        ? 'bg-green-800 text-white ml-auto max-w-[85%] border-green-700'
+                        : 'bg-white/95 backdrop-blur-sm text-gray-900 mr-auto max-w-[85%] border-green-100'
                         }`}
                     >
                       <div className="flex items-start space-x-4">
                         <div className="flex-shrink-0">
                           <div className={`w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-bold shadow-inner ${message.role === 'user'
-                              ? 'bg-white text-green-800'
-                              : 'bg-green-800 text-white'
+                            ? 'bg-white text-green-800'
+                            : 'bg-green-800 text-white'
                             }`}>
                             {message.role === 'user' ? 'U' : 'A'}
                           </div>

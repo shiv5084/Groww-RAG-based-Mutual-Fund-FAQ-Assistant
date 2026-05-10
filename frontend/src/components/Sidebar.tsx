@@ -239,7 +239,10 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
                 >
                   <TrendingUp className="text-white" size={24} />
                 </motion.div>
-                <span className="text-white font-black text-xl tracking-tighter">GROWW<span className="text-green-500">.</span></span>
+                <div className="flex flex-col">
+                  <span className="text-white font-bold text-xs tracking-tight">Groww Mutual Fund</span>
+                  <span className="text-green-500 font-bold text-[10px] uppercase tracking-[1px]">FAQ Assistant</span>
+                </div>
               </motion.div>
             ) : (
               <motion.div 

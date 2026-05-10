@@ -341,14 +341,11 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
               animate="visible"
               exit="exit"
               style={{ 
-                top: activeFundPos + 450 > (typeof window !== 'undefined' ? window.innerHeight : 1000) 
-                  ? 'auto' 
-                  : activeFundPos,
-                bottom: activeFundPos + 450 > (typeof window !== 'undefined' ? window.innerHeight : 1000) 
-                  ? '20px' 
-                  : 'auto'
+                top: isMobile ? '50%' : (activeFundPos + 450 > (typeof window !== 'undefined' ? window.innerHeight : 1000) ? 'auto' : activeFundPos),
+                bottom: !isMobile && activeFundPos + 450 > (typeof window !== 'undefined' ? window.innerHeight : 1000) ? '20px' : 'auto',
+                transform: isMobile ? 'translate(-50%, -50%)' : 'none',
               }}
-              className={`fixed ${isOpen ? 'left-[335px]' : 'left-[95px]'} w-[280px] z-[100] perspective-1000 pointer-events-auto`}
+              className={`fixed ${isMobile ? 'left-1/2' : (isOpen ? 'left-[335px]' : 'left-[95px]')} w-[280px] z-[100] perspective-1000 pointer-events-auto`}
             >
               <div className="bg-[#0f2a1e]/95 backdrop-blur-2xl border border-green-500/30 rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative group overflow-hidden">
                 {/* Decorative Background Glow */}
@@ -413,6 +410,7 @@ function NavItem({ icon, label, isOpen, active = false }: { icon: React.ReactNod
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -10 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="ml-3 text-sm font-medium whitespace-nowrap"
           >
             {label}

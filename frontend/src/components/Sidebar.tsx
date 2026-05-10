@@ -158,14 +158,16 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
   const submenuVariants = {
     hidden: { 
       opacity: 0, 
-      x: -30, 
+      x: isMobile ? "-50%" : -30, 
+      y: isMobile ? "-40%" : 0,
       rotateY: -35, 
       perspective: 1000,
       scale: 0.9,
     },
     visible: { 
       opacity: 1, 
-      x: 0, 
+      x: isMobile ? "-50%" : 0, 
+      y: isMobile ? "-50%" : 0,
       rotateY: 0, 
       perspective: 1000,
       scale: 1,
@@ -177,7 +179,8 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
     },
     exit: { 
       opacity: 0, 
-      x: -20, 
+      x: isMobile ? "-50%" : -20, 
+      y: isMobile ? "-60%" : 0,
       rotateY: -25, 
       scale: 0.95,
       transition: { duration: 0.2 },
@@ -343,9 +346,8 @@ export default function Sidebar({ onToggle }: { onToggle?: (isOpen: boolean) => 
               style={{ 
                 top: isMobile ? '50%' : (activeFundPos + 450 > (typeof window !== 'undefined' ? window.innerHeight : 1000) ? 'auto' : activeFundPos),
                 bottom: !isMobile && activeFundPos + 450 > (typeof window !== 'undefined' ? window.innerHeight : 1000) ? '20px' : 'auto',
-                transform: isMobile ? 'translate(-50%, -50%)' : 'none',
               }}
-              className={`fixed ${isMobile ? 'left-1/2' : (isOpen ? 'left-[335px]' : 'left-[95px]')} w-[280px] z-[100] perspective-1000 pointer-events-auto`}
+              className={`fixed ${isMobile ? 'left-1/2' : (isOpen ? 'left-[335px]' : 'left-[95px]')} w-[min(280px,85vw)] z-[100] perspective-1000 pointer-events-auto`}
             >
               <div className="bg-[#0f2a1e]/95 backdrop-blur-2xl border border-green-500/30 rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative group overflow-hidden">
                 {/* Decorative Background Glow */}

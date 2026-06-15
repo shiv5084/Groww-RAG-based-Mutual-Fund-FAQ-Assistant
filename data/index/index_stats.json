@@ -1,5 +1,5 @@
 {
-  "vector_store_count": 125,
-  "bm25_count": 125,
+  "vector_store_count": 124,
+  "bm25_count": 124,
   "alpha": 0.5
 }
